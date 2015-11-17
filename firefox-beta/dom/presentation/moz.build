@@ -1,0 +1,59 @@
+# -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+DIRS += ['interfaces', 'provider']
+
+XPCSHELL_TESTS_MANIFESTS += ['tests/xpcshell/xpcshell.ini']
+MOCHITEST_MANIFESTS += ['tests/mochitest/mochitest.ini']
+
+EXPORTS.mozilla.dom += [
+    'ipc/PresentationChild.h',
+    'ipc/PresentationIPCService.h',
+    'ipc/PresentationParent.h',
+    'Presentation.h',
+    'PresentationAvailability.h',
+    'PresentationCallbacks.h',
+    'PresentationDeviceManager.h',
+    'PresentationRequest.h',
+    'PresentationService.h',
+    'PresentationSession.h',
+    'PresentationSessionInfo.h',
+    'PresentationSessionTransport.h',
+]
+
+UNIFIED_SOURCES += [
+    'ipc/PresentationChild.cpp',
+    'ipc/PresentationIPCService.cpp',
+    'ipc/PresentationParent.cpp',
+    'Presentation.cpp',
+    'PresentationAvailability.cpp',
+    'PresentationCallbacks.cpp',
+    'PresentationDeviceManager.cpp',
+    'PresentationRequest.cpp',
+    'PresentationService.cpp',
+    'PresentationSession.cpp',
+    'PresentationSessionInfo.cpp',
+    'PresentationSessionRequest.cpp',
+    'PresentationSessionTransport.cpp',
+]
+
+EXTRA_COMPONENTS += [
+    'PresentationDeviceInfoManager.js',
+    'PresentationDeviceInfoManager.manifest',
+]
+
+EXTRA_JS_MODULES += [
+    'PresentationDeviceInfoManager.jsm',
+]
+
+IPDL_SOURCES += [
+    'ipc/PPresentation.ipdl',
+    'ipc/PPresentationRequest.ipdl'
+]
+
+include('/ipc/chromium/chromium-config.mozbuild')
+
+FINAL_LIBRARY = 'xul'

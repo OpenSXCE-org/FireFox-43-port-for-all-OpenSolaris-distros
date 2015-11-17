@@ -1,0 +1,18 @@
+# -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
+# vim: set filetype=python:
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+DEFINES['ANDROID_PACKAGE_NAME'] = CONFIG['ANDROID_PACKAGE_NAME']
+
+ANDROID_APK_NAME = 'background-junit3-debug'
+ANDROID_APK_PACKAGE = 'org.mozilla.gecko.background.tests'
+
+include('background_junit3_sources.mozbuild')
+
+jar = add_java_jar('background-junit3')
+jar.sources += background_junit3_sources
+jar.extra_jars += [CONFIG['ANDROID_COMPAT_LIB']]
+
+ANDROID_INSTRUMENTATION_MANIFESTS += ['instrumentation.ini']
