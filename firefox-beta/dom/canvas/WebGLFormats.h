@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -154,7 +158,7 @@ enum class UnsizedFormat : uint8_t {
     A,
     D,
     S,
-    DS,
+    XDS,
 };
 
 // GLES 3.0.4 p114 Table 3.4

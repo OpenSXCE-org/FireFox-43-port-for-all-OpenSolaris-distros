@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -40,6 +44,7 @@
     #include <sys/stat.h>
     #include <limits.h>
     #include <unistd.h>
+extern "C" int madvise(caddr_t, size_t, int);
 #elif defined(XP_WIN)
     #include <io.h>
 #endif
@@ -624,8 +629,10 @@ MOZ_WIN_MEM_TRY_BEGIN
     // Success means optimized jar layout from bug 559961 is in effect
     uint32_t readaheadLength = xtolong(startp);
     if (readaheadLength) {
-#if defined(XP_UNIX)
-      madvise(const_cast<uint8_t*>(startp), readaheadLength, MADV_WILLNEED);
+#if defined(OS_SOLARIS)
+      posix_madvise((caddr_t)const_cast<uint8_t*>(startp), readaheadLength, MADV_WILLNEED);
+#elif defined(XP_UNIX)
+      madvise((caddr_t)const_cast<uint8_t*>(startp), readaheadLength, MADV_WILLNEED);
 #elif defined(XP_WIN)
       if (aFd) {
         HANDLE hFile = (HANDLE) PR_FileDesc2NativeHandle(aFd);

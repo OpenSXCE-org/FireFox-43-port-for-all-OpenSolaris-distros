@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* Portable arc4random.c based on arc4random.c from OpenBSD.
  * Portable version by Chris Davis, adapted for Libevent by Nick Mathewson
  * Copyright (c) 2010 Chris Davis, Niels Provos, and Nick Mathewson
@@ -41,6 +45,8 @@
  * RC4 is a registered trademark of RSA Laboratories.
  */
 
+#include "build/build_config.h"
+
 #ifndef ARC4RANDOM_EXPORT
 #define ARC4RANDOM_EXPORT
 #endif
@@ -59,7 +65,7 @@
 #include <sys/param.h>
 #include <sys/time.h>
 #ifdef _EVENT_HAVE_SYS_SYSCTL_H
-#include <sys/sysctl.h>
+;//#include <sys/sysctl.h>
 #endif
 #endif
 #include <limits.h>
@@ -165,6 +171,10 @@ arc4_seed_win32(void)
 	arc4_seeded_ok = 1;
 	return 0;
 }
+#endif
+
+#if defined (OS_SOLARIS)
+ #undef _EVENT_HAVE_SYS_SYSCTL_H
 #endif
 
 #if defined(_EVENT_HAVE_SYS_SYSCTL_H) && defined(_EVENT_HAVE_SYSCTL)

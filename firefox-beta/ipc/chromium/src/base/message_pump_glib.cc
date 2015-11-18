@@ -1,9 +1,14 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2008 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 #include "base/message_pump_glib.h"
 
+#include <unistd.h>
 #include <fcntl.h>
 #include <math.h>
 
@@ -128,6 +133,12 @@ MessagePumpForUI::MessagePumpForUI()
   // Create our wakeup pipe, which is used to flag when work was scheduled.
   int fds[2];
   CHECK(pipe(fds) == 0);
+
+  int flags = fcntl(fds[0], F_GETFL, 0);
+  if (flags == -1)
+    flags = 0;
+  fcntl(fds[0], F_SETFL, flags | O_NDELAY);
+
   wakeup_pipe_read_  = fds[0];
   wakeup_pipe_write_ = fds[1];
   wakeup_gpollfd_->fd = wakeup_pipe_read_;
@@ -234,10 +245,9 @@ bool MessagePumpForUI::HandleCheck() {
   // are only signaled when the queue went from empty to non-empty.  The glib
   // poll will tell us whether there was data, so this read shouldn't block.
   if (wakeup_gpollfd_->revents & G_IO_IN) {
-    char msg;
-    if (HANDLE_EINTR(read(wakeup_pipe_read_, &msg, 1)) != 1 || msg != '!') {
-      NOTREACHED() << "Error reading from the wakeup pipe.";
-    }
+    char buf[32];
+    while (HANDLE_EINTR(read(wakeup_pipe_read_, &buf, 32)));
+
     // Since we ate the message, we need to record that we have more work,
     // because HandleCheck() may be called without HandleDispatch being called
     // afterwards.
@@ -301,6 +311,10 @@ void MessagePumpForUI::ScheduleWork() {
   // variables as we would then need locks all over.  This ensures that if
   // we are sleeping in a poll that we will wake up.
   char msg = '!';
+  char buf[32];
+
+  while (HANDLE_EINTR(read(wakeup_pipe_read_, &buf, 32)));
+
   if (HANDLE_EINTR(write(wakeup_pipe_write_, &msg, 1)) != 1) {
     NOTREACHED() << "Could not write to the UI message loop wakeup pipe!";
   }

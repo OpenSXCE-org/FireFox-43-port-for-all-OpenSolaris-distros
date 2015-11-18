@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
  * vim: sw=4 ts=4 et :
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -284,7 +288,7 @@ private:
 
     // we get this from the plugin
     NP_PLUGINSHUTDOWN mShutdownFunc;
-#if defined(OS_LINUX) || defined(OS_BSD)
+#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_SOLARIS)
     NP_PLUGINUNIXINIT mInitializeFunc;
 #elif defined(OS_WIN) || defined(OS_MACOSX)
     NP_PLUGININIT mInitializeFunc;

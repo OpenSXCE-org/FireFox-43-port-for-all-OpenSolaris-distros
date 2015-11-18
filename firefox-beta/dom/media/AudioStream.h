@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* vim:set ts=2 sw=2 sts=2 et cindent: */
 /* This Source Code Form is subject to the terms of the Mozilla Public
@@ -17,6 +21,7 @@
 #include "mozilla/UniquePtr.h"
 #include "CubebUtils.h"
 #include "soundtouch/SoundTouchFactory.h"
+#include "soundtouch/SoundTouch.h"
 
 namespace mozilla {
 

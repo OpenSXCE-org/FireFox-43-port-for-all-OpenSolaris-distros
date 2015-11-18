@@ -1,3 +1,8 @@
+#*
+#* Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+#* FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+#*
+
 # -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
 # vim: set filetype=python:
 # This Source Code Form is subject to the terms of the Mozilla Public
@@ -13,6 +18,7 @@ os_netbsd = 0
 os_openbsd = 0
 os_bsd = 0
 os_linux = 0
+os_solaris = 0
 
 if CONFIG['OS_ARCH'] == 'WINNT':
     os_win = 1
@@ -32,6 +38,8 @@ else:
     elif CONFIG['OS_ARCH'] == 'OpenBSD':
         os_openbsd = 1
         os_bsd = 1
+    elif CONFIG['OS_ARCH'] == 'SunOS':
+	os_solaris = 1
     else:
         os_linux = 1
 
@@ -245,6 +253,23 @@ if os_bsd:
             'src/third_party/libevent/kqueue.c',
         ]
         LOCAL_INCLUDES += ['src/third_party/libevent/bsd']
+
+if os_solaris:
+    SOURCES += [
+	'src/base/atomicops_internals_x86_gcc.cc',
+	'src/base/idle_timer_none.cc',
+	'src/base/process_util_linux.cc',
+	'src/base/time_posix.cc',
+    ]
+    if CONFIG['MOZ_WIDGET_GTK']:
+	SOURCES += [
+            'src/base/message_pump_glib.cc',
+	]
+    if not CONFIG['MOZ_NATIVE_LIBEVENT']:
+	SOURCES += [
+            'src/third_party/libevent/devpoll.c',
+	]
+    LOCAL_INCLUDES += ['src/third_party/libevent/linux']
 
 ost = CONFIG['OS_TEST']
 if '86' not in ost and 'arm' not in ost and 'mips' not in ost:

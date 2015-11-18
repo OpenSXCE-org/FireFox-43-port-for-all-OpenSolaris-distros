@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*-
  * vim: sw=2 ts=8 et :
  */
@@ -210,13 +214,13 @@ GfxInfo::GetData()
         // with Mesa, the version string contains "Mesa major.minor" and that's all the version information we get:
         // there is no actual driver version info.
         whereToReadVersionNumbers = Mesa_in_version_string + strlen("Mesa");
-        if (strcasestr(mVendor.get(), "nouveau"))
+        if (PL_strcasestr(mVendor.get(), "nouveau"))
             mIsNouveau = true;
-        if (strcasestr(mRenderer.get(), "intel")) // yes, intel is in the renderer string
+        if (PL_strcasestr(mRenderer.get(), "intel")) // yes, intel is in the renderer string
             mIsIntel = true;
-        if (strcasestr(mRenderer.get(), "llvmpipe"))
+        if (PL_strcasestr(mRenderer.get(), "llvmpipe"))
             mIsLlvmpipe = true;
-        if (strcasestr(mRenderer.get(), "software rasterizer"))
+        if (PL_strcasestr(mRenderer.get(), "software rasterizer"))
             mIsOldSwrast = true;
     } else if (strstr(mVendor.get(), "NVIDIA Corporation")) {
         mIsNVIDIA = true;

@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* vim: set sw=4 ts=4 et : */
 /* This Source Code Form is subject to the terms of the Mozilla Public
@@ -308,7 +312,7 @@ PluginModuleChild::InitForChrome(const std::string& aPluginFilename,
 
     // TODO: use PluginPRLibrary here
 
-#if defined(OS_LINUX) || defined(OS_BSD)
+#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_SOLARIS)
     mShutdownFunc =
         (NP_PLUGINSHUTDOWN) PR_FindFunctionSymbol(mLibrary, "NP_Shutdown");
 
@@ -339,9 +343,11 @@ PluginModuleChild::InitForChrome(const std::string& aPluginFilename,
 }
 
 #if defined(MOZ_WIDGET_GTK)
+extern "C" {
 typedef void (*GObjectDisposeFn)(GObject*);
 typedef gboolean (*GtkWidgetScrollEventFn)(GtkWidget*, GdkEventScroll*);
 typedef void (*GtkPlugEmbeddedFn)(GtkPlug*);
+}
 
 static GObjectDisposeFn real_gtk_plug_dispose;
 static GtkPlugEmbeddedFn real_gtk_plug_embedded;
@@ -1882,7 +1888,7 @@ PluginModuleChild::AnswerNP_GetEntryPoints(NPError* _retval)
     AssertPluginThread();
     MOZ_ASSERT(mIsChrome);
 
-#if defined(OS_LINUX) || defined(OS_BSD)
+#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_SOLARIS)
     return true;
 #elif defined(OS_WIN) || defined(OS_MACOSX)
     *_retval = mGetEntryPointsFunc(&mFunctions);
@@ -1927,7 +1933,7 @@ PluginModuleChild::DoNP_Initialize(const PluginSettings& aSettings)
 #endif
 
     NPError result;
-#if defined(OS_LINUX) || defined(OS_BSD)
+#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_SOLARIS)
     result = mInitializeFunc(&sBrowserFuncs, &mFunctions);
 #elif defined(OS_WIN) || defined(OS_MACOSX)
     result = mInitializeFunc(&sBrowserFuncs);

@@ -1,0 +1,12 @@
+Easy:
+
+A) clone the repo
+
+B) run ./MAKE_WORLDx.sh
+(if you run into headers related errors until you correct some pieces, that's normal - but happens at different places from system to system)
+
+Alternatively: For users of Sun/Oracle's SFW/userland derived userlands everything is prepared ready to run under oracle-userland-integration/.
+
+C) for SVR4 package creation, such as on OpenSXCE, TribbliX, Sun SXCE11 or Sun/Oracle Solaris10.x the place to look is under oracle-userland-integration/opensxce/.
+
+Good luck and happy coding :)

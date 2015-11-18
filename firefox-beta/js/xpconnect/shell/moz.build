@@ -1,3 +1,8 @@
+#*
+#* Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+#* FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+#*
+
 # -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
 # vim: set filetype=python:
 # This Source Code Form is subject to the terms of the Mozilla Public
@@ -35,3 +40,14 @@ if CONFIG['OS_ARCH'] == 'WINNT':
 CFLAGS += CONFIG['TK_CFLAGS']
 CXXFLAGS += CONFIG['TK_CFLAGS']
 OS_LIBS += CONFIG['TK_LIBS']
+
+OS_LIBS += [
+         '$(DEPTH)/security/nss/lib/util/libnssutil3.so',
+         '$(DEPTH)/security/nss/lib/ssl/libssl3.so',
+         '$(DEPTH)/security/nss/lib/smime/libsmime3.so',
+         '$(DEPTH)/security/nss/lib/nss/libnss3.so',
+         '$(DEPTH)/config/external/sqlite/libmozsqlite3.so',
+	 '$(DEPTH)/config/external/lgpllibs/liblgpllibs.so',
+         '-lsendfile',
+         '-last'
+   ]

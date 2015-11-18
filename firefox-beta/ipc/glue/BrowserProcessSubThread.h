@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*-
  * vim: sw=2 ts=8 et :
  */
@@ -28,12 +32,10 @@ public:
       //FILE,
       //DB,
       //HISTORY,
-#if defined(OS_LINUX)
       // This thread has a second connection to the X server and is used
       // to process UI requests when routing the request to the UI
       // thread would risk deadlock.
       BACKGROUND_X11,
-#endif
 
       // This identifier does not represent a thread.  Instead it counts
       // the number of well-known threads.  Insert new well-known

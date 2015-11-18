@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
@@ -33,6 +37,9 @@
  *  -----------
  *  method   = "remove" | "rmdir"
  */
+
+#define SOLARIS 1
+
 #include "bspatch.h"
 #include "progressui.h"
 #include "archivereader.h"

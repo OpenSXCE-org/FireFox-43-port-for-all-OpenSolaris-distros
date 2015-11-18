@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
  * vim: set ts=8 sts=4 et sw=4 tw=99:
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -86,7 +90,7 @@ OffsetFromAligned(void* p, size_t alignment)
 void*
 TestMapAlignedPagesLastDitch(size_t size, size_t alignment)
 {
-    return MapAlignedPagesLastDitch(size, alignment);
+    ; //return MapAlignedPagesLastDitch(size, alignment);
 }
 
 
@@ -663,7 +667,7 @@ MarkPagesUnused(void* p, size_t size)
         return false;
 
     MOZ_ASSERT(OffsetFromAligned(p, pageSize) == 0);
-    int result = madvise(p, size, MADV_DONTNEED);
+    int result = posix_madvise(p, size, MADV_DONTNEED);
     return result != -1;
 }
 

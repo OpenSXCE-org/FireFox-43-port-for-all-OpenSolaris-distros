@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2006-2008 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -65,11 +69,13 @@ Time Time::FromExploded(bool is_local, const Exploded& exploded) {
   timestruct.tm_wday   = exploded.day_of_week;  // mktime/timegm ignore this
   timestruct.tm_yday   = 0;     // mktime/timegm ignore this
   timestruct.tm_isdst  = -1;    // attempt to figure it out
+#ifndef OS_SOLARIS
   timestruct.tm_gmtoff = 0;     // not a POSIX field, so mktime/timegm ignore
   timestruct.tm_zone   = NULL;  // not a POSIX field, so mktime/timegm ignore
+#endif
 
   time_t seconds;
-#ifdef ANDROID
+#if defined(ANDROID) || defined(OS_SOLARIS)
     seconds = mktime(&timestruct);
 #else
   if (is_local)
@@ -167,7 +173,7 @@ TimeTicks TimeTicks::Now() {
   // With numer and denom = 1 (the expected case), the 64-bit absolute time
   // reported in nanoseconds is enough to last nearly 585 years.
 
-#elif defined(OS_OPENBSD) || defined(OS_POSIX) && \
+#elif defined(OS_OPENBSD) || defined(OS_SOLARIS) || defined(OS_POSIX) && \
       defined(_POSIX_MONOTONIC_CLOCK) && _POSIX_MONOTONIC_CLOCK >= 0
 
   struct timespec ts;
@@ -190,6 +196,27 @@ TimeTicks TimeTicks::Now() {
 // static
 TimeTicks TimeTicks::HighResNow() {
   return Now();
+}
+
+struct timespec TimeDelta::ToTimeSpec() const {
+  int64_t microseconds = InMicroseconds();
+  time_t seconds = 0;
+  if (microseconds >= Time::kMicrosecondsPerSecond) {
+    seconds = InSeconds();
+    microseconds -= seconds * Time::kMicrosecondsPerSecond;
+  }
+  struct timespec result =
+      {seconds,
+       microseconds * Time::kNanosecondsPerMicrosecond};
+  return result;
+}
+
+struct timeval Time::ToTimeVal() const {
+  struct timeval result;
+  int64_t us = us_ - kTimeTToMicrosecondsOffset;
+  result.tv_sec = us / Time::kMicrosecondsPerSecond;
+  result.tv_usec = us % Time::kMicrosecondsPerSecond;
+  return result;
 }
 
 }  // namespace base

@@ -1675,12 +1675,12 @@ this.XPIDatabaseReconcile = {
 
     if (isDetectedInstall && aNewAddon.foreignInstall) {
       // If the add-on is a foreign install and is in a scope where add-ons
-      // that were dropped in should default to disabled then disable it
+      // that were dropped in should default to disabled then enable it anyway on OpenSolaris (preinstalled langpacks)
       let disablingScopes = Preferences.get(PREF_EM_AUTO_DISABLED_SCOPES, 0);
       if (aInstallLocation.scope & disablingScopes) {
-        logger.warn("Disabling foreign installed add-on " + aNewAddon.id + " in "
+        logger.warn("Enabling foreign installed add-on " + aNewAddon.id + " in "
             + aInstallLocation.name);
-        aNewAddon.userDisabled = true;
+        aNewAddon.userDisabled = false;
       }
     }
 

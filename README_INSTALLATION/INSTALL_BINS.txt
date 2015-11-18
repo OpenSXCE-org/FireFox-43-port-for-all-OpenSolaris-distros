@@ -1,0 +1,162 @@
+INSTALL bins:
+@@@@@UPDATE@@@@@: Flash Plugin 9/10/11.x 
+... works now inside this gcc compiled Firefox!
+That was a complete Novum when I reached this step in April. This took another tough week
+of work night and day and night.
+Nobody has ever achieved this before with a gcc build of FF on Solaris (at least nobody in the records and nobody who offered to donate this to the broader planet OpenSolaris).
+From the src it appears that this must also affect other UNIX/LinUX OS ports, but I never tested this.
+
+
+It was tested and is known to work with:
+(instabilities and freezes related to videos that are in a too new format can always happen, but are not related to this port, while flash is closed src and I can only take their bins and make them work in FF as good as technically possible)
+
+drwxr-xr-x 2 martin other       4 Dec 27  2007 flash_player_9_solaris_r115_x86
+drwx------ 2 martin other       3 Nov  8  2011 flash_player_solaris_10_3_183_11_x86
+drwx------ 2 martin other       3 Nov  3  2011 flash_player_solaris_11_1_102_56_x86
+-rw------- 1 martin other 4752427 Nov  9  2011 flashplayer10_3r183_11_solaris_x86.tar.bz2
+-rw------- 1 martin other 4755108 Aug  9  2011 flashplayer10_3r183_5_solaris_x86.tar.bz2
+-rw------- 1 martin other 4752536 Aug 23  2011 flashplayer10_3r183_7_solaris_x86.tar.bz2
+-rw------- 1 martin other 6084262 Nov  4  2011 flashplayer11_1r102_55_solaris_x86.tar.bz2
+-rw------- 1 martin other 6212851 Mar 20  2012 flashplayer11_2r202_228_solaris_x86.tar.bz2
+-rw------- 1 martin other 2859276 Jun 10  2010 flashplayer9r115_solaris_x86.tar.bz2
+
+
+Attention: On all newer Illumos based Distros _except_ OpenSXCE you probably need some loading order
+nonsense to get the Flash-Plugin 11.x initializing itself rather than crashing (only works sometimes, not with all codecs). 
+In such cases you should remove your local libflashplayer.so from the plugins directory and set HTML5 as your default player (e.g. on youtube).
+But that drmatically reduces compatibility and rather often you cannot watch a news or music video. Because ... : HTML5 nice and good, but often they still force use to use flash.
+
+
+
+
+INSTALLATION (SVR4 pkg) :
+
+$ cd ~/Downloads
+$ wget http://opensxce.org/.FF/43.0b3/i386/PKG/firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.pkg.bz2
+$ wget http://opensxce.org/.FF/43.0b3/i386/PKG/firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.pkg.bz2__MD5SUM.txt
+$ grep `md5sum --binary ./firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.pkg.bz2` firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.pkg.bz2__MD5SUM.txt
+$ bunzip2 ./firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.pkg.bz2
+$ su
+# pkgrm SUNWfirefox43.0b3 (all other versions can be installed without a single namespace conflict)
+# pkgadd -d ./firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.pkg
+
+
+
+INSTALLATION (tar archive) :
+
+$ cd ~/Downloads
+$ wget http://opensxce.org/.FF/43.0b3/i386/TAR/firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.tar.bz2
+$ wget http://opensxce.org/.FF/43.0b3/i386/TAR/firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.tar.bz2__MD5SUM.txt
+$ grep `md5sum --binary ./firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.tar.bz2` firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.tar.bz2__MD5SUM.txt
+$ su
+# rm -Rf /usr/lib/firefox43.0b3 && rm /usr/bin/firefox43.0b3 ([just FYI, not needed, as tar is not cpio] all other versions can be installed without a single namespace conflict)
+# (cd /;bzcat ~/Downloads/firefox-43.0b3___Multilang__gcc4x-built__supports-flash-plugin__opensolaris-snv_130++_all_distros-i386.tar.bz2|tar xvf -)
+
+Note: if you have no 335 MB space in /usr it can be placed onto _any_ filesystem, as long as you create a symlink pointing to the new location as /usr/lib/firefox43.0b3 (mandatory)
+
+
+
+WHERE IS THE PLUGINS INSTALL DIR:
+
+Global location: /usr/lib/firefox43.0b3/plugins (symlink) or /usr/lib/firefox43.0b3/lib/firefox-43.0/browser/plugins
+Because by definition, given that I frequently want to test different flash plugins for testing, I always use ~/firefox/plugins which works.
+To verify which plugins got recognized open FF and enter the special URL:   about:plugins
+Don't forget that Flash will crash on Illumos kernels except on OpenSXCE (which is the only one with a kernel fix).
+
+
+
+USAGE:
+
+FF43.0b3 can be started in 3 different ways, either of the following ...
+
+$ /usr/bin/firefox43.0b3
+
+$ /usr/lib/firefox43.0b3/bin/firefox
+
+or under JDS/Gnome from {Start}->{All Applications}->{Internet}->{Firefox 43.0b3 Beta}
+
+
+
+UNINSTALL:
+# pkgrm SUNWfirefox43-0b3
+
+
+
+
+SVR4 NOTES:
+
+Normally one could have split this into 95 dedicated packages (one for each locale and then for bookmarks, etc) and could have created a sophisticated set of depend files for them, defining dependencies and interdependencies.
+HOWEVER: I like simplicity, openness, clarity and user-friendliness. Therefore it comes all in a single package and hence in a click and go experience.
+Also - as I rarely if ever used IPS in my life I don't know if depend files to non-existant packages can be easily overridden on Sun Indiana derived distros, never tried. But I think such things can be tricky there. As the audience of these packages are Solaris professionals, rather than XP clickers, I assume every user knows that his installation needs more than just a OS/Net install cluster. Therefore I did not define any depend file at all (as I see Sun/Oracle does the same for its FF ESR packages).
+
+Nevertheless, for the records, here the list of SUNWfirefox* packages that would have been created from this in the old times and also a depend file.
+NOTE: For audio support no extra dependency is required, as I borrowed Sun's audio code from their diffs.
+NOTE#2: The gcc4 runtime is bundled and doesn't need to be present on the system (no gcc/gcc-runtime must be installed via any separate pkgs).
+For java I recommend a userland-compiled openjdk7.
+
+
+Here the legacy SVR4 pkgadd SUNW* names:
+
+SUNWfirefox
+SUNWfirefox-bookmark
+SUNWfirefox-devel
+SUNWfirefoxl10n-de-DE
+SUNWfirefoxl10n-es-ES
+SUNWfirefoxl10n-extra
+SUNWfirefoxl10n-fr-FR
+SUNWfirefoxl10n-hi-IN
+SUNWfirefoxl10n-it-IT
+SUNWfirefoxl10n-ja-JP
+SUNWfirefoxl10n-ko-KR
+SUNWfirefoxl10n-pl-PL
+SUNWfirefoxl10n-pt-BR
+SUNWfirefoxl10n-ru-RU
+SUNWfirefoxl10n-sv-SE
+SUNWfirefoxl10n-zh-CN
+SUNWfirefoxl10n-zh-TW
+
+
+... and a sample depend file:
+
+# gcc4.9 runtime not needed because included in package
+P SUNWcar Core Architecture, (Root)
+P SUNWkvm Core Architecture, (Kvm)
+P SUNWcsr Core Solaris, (Root)
+P SUNWcsu Core Solaris, (Usr)
+P SUNWcsd Core Solaris Devices
+P SUNWcsl Core Solaris, (Shared Libs)
+P SUNWgtk2 GTK+ - GIMP toolkit libraries
+P SUNWjdsrm Java Desktop System upgrade package remove
+P SUNWj7rt OpenJDK 7.0 Runtime Env. (1.7.0_02)
+P SUNWfontconfig Fontconfig library
+P SUNWfreetype2 FreeType2 Font library
+P SUNWgnome-config GNOME configuration framework
+P SUNWgnome-libs GNOME platform libraries
+P SUNWgnome-vfs GNOME virtual file system framework and application/MIME type registry
+P SUNWbash GNU Bourne-Again shell (bash)
+P SUNWdesktop-cache desktop-cache is a set of SMF services used to update the various GNOME desktop caches.
+P SUNWpr Netscape Portable Runtime
+P SUNWtls Network Security Services
+P SUNWlibtheora Theora video compression codec
+P SUNWogg-vorbis Ogg bitstream and Vorbis audio codec libraries
+P SUNWsqlite3 SQLite3
+
+
+Final explanation: As mentioned the binary package/tarball available at http://opensxce.org/.FF/43.0b3/i386/ was created to run on EVERY OpenSolaris/Solaris11/Solaris12/Illumos derived distro out of the box.
+Therefore it was compiled on old Sun SXCE snv_130. There I didn't want to go though the hassle to bootstrap the much newer userland until finally a newer gcc like 4.7 or 4.8 builds fine. Also I wanted to be userfriendly again: For best interdistro-operability I took something which everybody can install in 5 minutes, no matter on which distro he lives. That's why the choice fell for OpenCSW's/Blastwave's gcc4.9!
+And its runtime is also the one that I henceforth chose for includion in the binary enduser-packages.
+In a hurry I installed Hipster April 2015 Edition in self-compiled Vbox from the opensxce-userland to verify if it runs out of the box, result: Yes.
+Only bug I saw so far: The loudspeaker symbol for tabs (new FF feature!) does not change the volume, neither if it contains a video played in html5 nor flash.
+But now I confirmed that on snv_130 and on OpenSXCE2014.05 it is the same (maybe it also affaects non-Solaris OS's and has nothing to do with my port). We can look into that later - it has a low priority on my agenda. Because the workaround is simple: Use /usr/bin/gnome-volmume-control as until now, and you want to mute a tab, click the [pause] button in the html5 or adobe player.
+
+p.s. The OpenIndiana Flash-test page should be updated to point to another test video (see http://opensxce.org/.FF/43.0b3/i386/demo_screenshots/).
+Youtube now defaults to html5 where-ever possible.
+
+
+
+best regards, %m
+
+email: opensxce@mail.ru
+(This would in theory also be my PAYPAL address, but you know the joke about theory vs. practice)
+
+

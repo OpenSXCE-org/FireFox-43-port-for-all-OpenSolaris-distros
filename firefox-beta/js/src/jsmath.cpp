@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
  * vim: set ts=8 sts=4 et sw=4 tw=99:
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -958,7 +962,7 @@ js::math_sincos_uncached(double x, double *sin, double *cos)
 {
 #if defined(__GLIBC__)
     sincos(x, sin, cos);
-#elif defined(HAVE_SINCOS)
+#elif defined(_HAVE_SINCOS)
     __sincos(x, sin, cos);
 #else
     *sin = js::math_sin_uncached(x);

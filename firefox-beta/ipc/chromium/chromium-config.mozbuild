@@ -1,3 +1,8 @@
+#*
+#* Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+#* FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+#*
+
 # -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
 # vim: set filetype=python:
 # This Source Code Form is subject to the terms of the Mozilla Public
@@ -66,6 +71,12 @@ else:
         DEFINES.update({
             'OS_OPENBSD': 1,
             'OS_BSD': 1,
+        })
+
+    elif CONFIG['OS_ARCH'] == 'SunOS':
+        DEFINES.update({
+            'OS_SOLARIS': 1,
+            'OS_POSIX': 1,
         })
 
     else:

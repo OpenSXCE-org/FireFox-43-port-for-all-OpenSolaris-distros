@@ -1,3 +1,8 @@
+#*
+#* Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+#* FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+#*
+
 # -*- Mode: python; c-basic-offset: 4; indent-tabs-mode: nil; tab-width: 40 -*-
 # vim: set filetype=python:
 # This Source Code Form is subject to the terms of the Mozilla Public
@@ -40,6 +45,12 @@ if CONFIG['OS_TARGET'] == 'Darwin':
             'cubeb_osx_run_loop.c',
         ]
     DEFINES['USE_AUDIOUNIT'] = True
+
+if CONFIG['OS_ARCH'] == 'SunOS':
+    SOURCES += [
+	'cubeb_sun.c',
+    ]
+    DEFINES['USE_SUN'] = True
 
 if CONFIG['OS_TARGET'] == 'WINNT':
     SOURCES += [

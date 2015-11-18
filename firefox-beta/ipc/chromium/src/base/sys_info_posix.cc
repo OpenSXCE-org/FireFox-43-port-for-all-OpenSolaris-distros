@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2008 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -119,7 +123,7 @@ std::wstring SysInfo::GetEnvVar(const wchar_t* var) {
 
 // static
 std::string SysInfo::OperatingSystemName() {
-  utsname info;
+  struct utsname info;
   if (uname(&info) < 0) {
     NOTREACHED();
     return "";
@@ -129,7 +133,7 @@ std::string SysInfo::OperatingSystemName() {
 
 // static
 std::string SysInfo::OperatingSystemVersion() {
-  utsname info;
+  struct utsname info;
   if (uname(&info) < 0) {
     NOTREACHED();
     return "";
@@ -139,7 +143,7 @@ std::string SysInfo::OperatingSystemVersion() {
 
 // static
 std::string SysInfo::CPUArchitecture() {
-  utsname info;
+  struct utsname info;
   if (uname(&info) < 0) {
     NOTREACHED();
     return "";

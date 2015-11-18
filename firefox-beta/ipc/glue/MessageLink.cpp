@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
  * vim: sw=4 ts=4 et :
  */
@@ -27,6 +31,10 @@ extern "C" char* PrintJSStack();
 #include "nsDebug.h"
 #include "nsISupportsImpl.h"
 #include "nsXULAppAPI.h"
+
+#if defined(__sun__) || defined(__sun)
+#include <unistd.h>
+#endif
 
 using namespace mozilla;
 using namespace std;
@@ -350,7 +358,7 @@ ProcessLink::OnChannelOpened()
         mExistingListener = mTransport->set_listener(this);
 #ifdef DEBUG
         if (mExistingListener) {
-            queue<Message> pending;
+            std::queue<Message> pending;
             mExistingListener->GetQueuedMessages(pending);
             MOZ_ASSERT(pending.empty());
         }
@@ -367,7 +375,7 @@ ProcessLink::OnTakeConnectedChannel()
 {
     AssertIOThread();
 
-    queue<Message> pending;
+    std::queue<Message> pending;
     {
         MonitorAutoLock lock(*mChan->mMonitor);
 

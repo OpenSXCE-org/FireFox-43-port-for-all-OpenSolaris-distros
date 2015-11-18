@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -283,7 +287,7 @@ typedef enum {
  *   gcc 3.x generated vtables on UNIX and OSX are incompatible with
  *   previous compilers.
  */
-#if (defined(XP_UNIX) && defined(__GNUC__) && (__GNUC__ >= 3))
+#if (defined(XP_UNIX) && defined(__GNUC__) && (__GNUC__ == 3))
 #define _NP_ABI_MIXIN_FOR_GCC3 NP_ABI_GCC3_MASK
 #else
 #define _NP_ABI_MIXIN_FOR_GCC3 0

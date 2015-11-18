@@ -1,10 +1,20 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*-
  */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#include "GeckoChildProcessHost.h"
+#if defined(__sun__) || defined(__sun)
+_Pragma("GCC visibility push(default)")
+#endif
+ #include "GeckoChildProcessHost.h"
+#if defined(__sun__) || defined(__sun)
+_Pragma("GCC visibility pop")
+#endif
 
 #include "base/command_line.h"
 #include "base/string_util.h"
@@ -628,13 +638,16 @@ GeckoChildProcessHost::PerformAsyncLaunchInternal(std::vector<std::string>& aExt
   // and passing wstrings from one config to the other is unsafe.  So
   // we split the logic here.
 
-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
-  base::environment_map newEnvVars;
+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD) || defined(OS_SOLARIS)
   ChildPrivileges privs = mPrivileges;
   if (privs == base::PRIVILEGES_DEFAULT) {
     privs = DefaultChildPrivileges();
   }
-  // XPCOM may not be initialized in some subprocesses.  We don't want
+#endif
+
+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+  base::environment_map newEnvVars;
+// XPCOM may not be initialized in some subprocesses.  We don't want
   // to initialize XPCOM just for the directory service, especially
   // since LD_LIBRARY_PATH is already set correctly in subprocesses
   // (meaning that we don't need to set that up in the environment).
@@ -754,7 +767,7 @@ GeckoChildProcessHost::PerformAsyncLaunchInternal(std::vector<std::string>& aExt
   childArgv.push_back(pidstring);
 
 #if defined(MOZ_CRASHREPORTER)
-#  if defined(OS_LINUX) || defined(OS_BSD)
+#  if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_SOLARIS)
   int childCrashFd, childCrashRemapFd;
   if (!CrashReporter::CreateNotificationPipeForChild(
         &childCrashFd, &childCrashRemapFd))
@@ -770,7 +783,7 @@ GeckoChildProcessHost::PerformAsyncLaunchInternal(std::vector<std::string>& aExt
   }
 #  elif defined(MOZ_WIDGET_COCOA)
   childArgv.push_back(CrashReporter::GetChildNotificationPipe());
-#  endif  // OS_LINUX
+#  endif  // OS_LINUX  || defined(OS_SOLARIS)
 #endif
 
 #ifdef MOZ_WIDGET_COCOA
@@ -789,6 +802,8 @@ GeckoChildProcessHost::PerformAsyncLaunchInternal(std::vector<std::string>& aExt
   base::LaunchApp(childArgv, mFileMap,
 #if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
                   newEnvVars, privs,
+#elif defined(OS_SOLARIS)
+                  base::environment_map(), privs,
 #endif
                   false, &process, arch);
 

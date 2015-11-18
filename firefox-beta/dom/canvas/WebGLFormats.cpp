@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -136,7 +140,7 @@ AddFormatInfo(EffectiveFormat format, const char* name, uint8_t bytesPerPixel,
     case UnsizedFormat::S:
         hasStencil = true;
         break;
-    case UnsizedFormat::DS:
+    case UnsizedFormat::XDS:
         hasDepth = true;
         hasStencil = true;
         break;
@@ -224,8 +228,8 @@ InitFormatInfoMap()
     AddFormatInfo(FOO(DEPTH_COMPONENT16 ), 2, UnsizedFormat::D , ComponentType::None);
     AddFormatInfo(FOO(DEPTH_COMPONENT24 ), 3, UnsizedFormat::D , ComponentType::None);
     AddFormatInfo(FOO(DEPTH_COMPONENT32F), 4, UnsizedFormat::D , ComponentType::None);
-    AddFormatInfo(FOO(DEPTH24_STENCIL8  ), 4, UnsizedFormat::DS, ComponentType::None);
-    AddFormatInfo(FOO(DEPTH32F_STENCIL8 ), 5, UnsizedFormat::DS, ComponentType::None);
+    AddFormatInfo(FOO(DEPTH24_STENCIL8  ), 4, UnsizedFormat::XDS, ComponentType::None);
+    AddFormatInfo(FOO(DEPTH32F_STENCIL8 ), 5, UnsizedFormat::XDS, ComponentType::None);
 
     // GLES 3.0.4, p205-206, "Required Renderbuffer Formats"
     AddFormatInfo(FOO(STENCIL_INDEX8), 1, UnsizedFormat::S, ComponentType::None);

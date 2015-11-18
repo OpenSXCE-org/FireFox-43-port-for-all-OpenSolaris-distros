@@ -1,0 +1,23 @@
+# gcc4.9 runtime not needed because included in package
+P SUNWcar Core Architecture, (Root)
+P SUNWkvm Core Architecture, (Kvm)
+P SUNWcsr Core Solaris, (Root)
+P SUNWcsu Core Solaris, (Usr)
+P SUNWcsd Core Solaris Devices
+P SUNWcsl Core Solaris, (Shared Libs)
+P SUNWgtk2 GTK+ - GIMP toolkit libraries
+P SUNWjdsrm Java Desktop System upgrade package remove
+P SUNWj7rt OpenJDK 7.0 Runtime Env. (1.7.0_02)
+P SUNWfontconfig Fontconfig library
+P SUNWfreetype2 FreeType2 Font library
+P SUNWgnome-config GNOME configuration framework
+P SUNWgnome-libs GNOME platform libraries
+P SUNWgnome-vfs GNOME virtual file system framework and application/MIME type registry
+P SUNWbash GNU Bourne-Again shell (bash)
+P SUNWdesktop-cache desktop-cache is a set of SMF services used to update the various GNOME desktop caches.
+P SUNWpr Netscape Portable Runtime
+P SUNWtls Network Security Services
+P SUNWlibtheora Theora video compression codec
+P SUNWogg-vorbis Ogg bitstream and Vorbis audio codec libraries
+P SUNWsqlite3 SQLite3
+

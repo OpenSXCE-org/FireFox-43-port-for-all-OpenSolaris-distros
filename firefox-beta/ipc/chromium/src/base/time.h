@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2006-2008 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -61,6 +65,10 @@ class TimeDelta {
   int64_t ToInternalValue() const {
     return delta_;
   }
+
+#if defined(OS_POSIX)
+  struct timespec ToTimeSpec() const;
+#endif
 
   // Returns the time delta in some unit. The F versions return a floating
   // point value, the "regular" versions return a rounded-down value.
@@ -224,6 +232,9 @@ class Time {
   static Time FromDoubleT(double dt);
   double ToDoubleT() const;
 
+#if defined(OS_POSIX)
+  struct timeval ToTimeVal() const;
+#endif
 
 #if defined(OS_WIN)
   static Time FromFileTime(FILETIME ft);

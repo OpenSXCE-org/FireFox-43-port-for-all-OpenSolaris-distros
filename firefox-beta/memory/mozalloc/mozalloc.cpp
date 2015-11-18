@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
  * vim: sw=4 ts=4 et :
  */
@@ -196,6 +200,14 @@ moz_xvalloc(size_t size)
 }
 #endif // if defined(HAVE_VALLOC)
 
+//#if defined(MOZ_MEMORY_SOLARIS)
+#include "jemalloc_types.h"
+extern "C" {
+extern size_t malloc_usable_size_impl(const void *ptr);
+extern void jemalloc_stats(jemalloc_stats_t* stats);
+}
+//#endif
+ 
 #ifndef MOZ_STATIC_RUNTIME
 size_t
 moz_malloc_usable_size(void *ptr)
@@ -206,7 +218,22 @@ moz_malloc_usable_size(void *ptr)
 #if defined(XP_DARWIN)
     return malloc_size(ptr);
 #elif defined(HAVE_MALLOC_USABLE_SIZE) || defined(MOZ_MEMORY)
+//#if defined(SOLARIS)
+    static bool checked = false;
+    static bool using_jemalloc = false;
+    if (!checked) {
+        checked = true;
+        jemalloc_stats_t stats;
+        jemalloc_stats(&stats);
+        using_jemalloc = stats.allocated;
+    }
+    if (using_jemalloc)
     return malloc_usable_size_impl(ptr);
+    else
+        return 0;
+//#else
+//    return malloc_usable_size_impl(ptr);
+//#endif
 #elif defined(XP_WIN)
     return _msize(ptr);
 #else

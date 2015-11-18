@@ -1,4 +1,8 @@
 /*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
+/*
  * Copyright (c) 2000-2007 Niels Provos <provos@citi.umich.edu>
  * Copyright (c) 2007-2012 Niels Provos and Nick Mathewson
  *
@@ -79,7 +83,7 @@ extern const struct eventop selectops;
 extern const struct eventop pollops;
 #endif
 #ifdef _EVENT_HAVE_EPOLL
-extern const struct eventop epollops;
+//extern const struct eventop epollops;
 #endif
 #ifdef _EVENT_HAVE_WORKING_KQUEUE
 extern const struct eventop kqops;
@@ -100,7 +104,7 @@ static const struct eventop *eventops[] = {
 	&kqops,
 #endif
 #ifdef _EVENT_HAVE_EPOLL
-	&epollops,
+//	&epollops,
 #endif
 #ifdef _EVENT_HAVE_DEVPOLL
 	&devpollops,
@@ -2883,8 +2887,8 @@ event_global_setup_locks_(const int enable_locks)
 #endif
 	if (evsig_global_setup_locks_(enable_locks) < 0)
 		return -1;
-	if (evutil_secure_rng_global_setup_locks_(enable_locks) < 0)
-		return -1;
+//	if (evutil_secure_rng_global_setup_locks_(enable_locks) < 0)
+//		return -1;
 	return 0;
 }
 #endif

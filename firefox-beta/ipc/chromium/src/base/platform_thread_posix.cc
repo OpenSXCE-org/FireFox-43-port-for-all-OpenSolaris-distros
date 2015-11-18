@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2006-2008 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -10,7 +14,13 @@
 #if defined(OS_MACOSX)
 #include <mach/mach.h>
 #elif defined(OS_NETBSD)
+_Pragma("GCC visibility push(default)")
 #include <lwp.h>
+_Pragma("GCC visibility pop")
+#elif defined(OS_SOLARIS)
+_Pragma("GCC visibility push(default)")
+#include <sys/lwp.h>
+_Pragma("GCC visibility pop")
 #elif defined(OS_LINUX)
 #include <sys/syscall.h>
 #include <sys/prctl.h>
@@ -25,6 +35,12 @@
 
 #if defined(OS_BSD) && !defined(OS_NETBSD) && !defined(__GLIBC__)
 #include <pthread_np.h>
+#endif
+
+#if defined(OS_SOLARIS)
+#include <sys/syscall.h>
+#include <unistd.h>
+#include <thread.h>
 #endif
 
 #if defined(OS_MACOSX)
@@ -54,6 +70,8 @@ PlatformThreadId PlatformThread::CurrentId() {
 #else
   return syscall(__NR_gettid);
 #endif
+#elif defined(OS_SOLARIS)
+  return thr_self();
 #elif defined(OS_OPENBSD) || defined(__GLIBC__)
   return (intptr_t) (pthread_self());
 #elif defined(OS_NETBSD)
@@ -114,7 +132,8 @@ void PlatformThread::SetName(const char* name) {
   pthread_setname_np(pthread_self(), "%s", (void *)name);
 #elif defined(OS_BSD) && !defined(__GLIBC__)
   pthread_set_name_np(pthread_self(), name);
-#else
+#elif !defined(OS_SOLARIS)
+  prctl(PR_SET_NAME, reinterpret_cast<uintptr_t>(name), 0, 0, 0);
 #endif
 }
 #endif // !OS_MACOSX

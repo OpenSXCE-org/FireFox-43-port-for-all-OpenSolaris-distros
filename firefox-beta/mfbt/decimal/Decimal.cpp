@@ -1,4 +1,8 @@
 /*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
+/*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -33,6 +37,7 @@
 
 #include <algorithm>
 #include <float.h>
+#include <ieeefp.h>
 
 using namespace moz_decimal_utils;
 
@@ -686,13 +691,13 @@ Decimal Decimal::floor() const
 
 Decimal Decimal::fromDouble(double doubleValue)
 {
-    if (std::isfinite(doubleValue))
-        return fromString(mozToString(doubleValue));
+    if (isnand(doubleValue))
+        return nan();
 
-    if (std::isinf(doubleValue))
+    if (finite(doubleValue))
+return fromString(mozToString(doubleValue));
+
         return infinity(doubleValue < 0 ? Negative : Positive);
-
-    return nan();
 }
 
 Decimal Decimal::fromString(const String& str)

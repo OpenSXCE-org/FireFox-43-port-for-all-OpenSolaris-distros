@@ -1,4 +1,8 @@
 /*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
+/*
  * Copyright © 2013 Mozilla Foundation
  *
  * This program is made available under an ISC-style license.  See the
@@ -55,6 +59,9 @@ int opensl_init(cubeb ** context, char const * context_name);
 #endif
 #if defined(USE_AUDIOTRACK)
 int audiotrack_init(cubeb ** context, char const * context_name);
+#endif
+#if defined(USE_SUN)
+int sunaudio_init(cubeb ** context, char const * context_name);
 #endif
 
 int
@@ -121,6 +128,9 @@ cubeb_init(cubeb ** context, char const * context_name)
 #endif
 #if defined(USE_AUDIOTRACK)
     audiotrack_init,
+#endif
+#if defined(USE_SUN)
+    sunaudio_init,
 #endif
   };
   int i;

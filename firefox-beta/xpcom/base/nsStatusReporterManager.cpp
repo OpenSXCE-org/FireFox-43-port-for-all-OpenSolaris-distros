@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* vim: set ts=8 sts=2 et sw=2 tw=80: */
 /* This Source Code Form is subject to the terms of the Mozilla Public
@@ -146,9 +150,11 @@ nsStatusReporterManager::DumpReports()
 {
   static unsigned number = 1;
   nsresult rv;
+  int thispid = 181818;
 
+  thispid = getpid();
   nsCString filename("status-reports-");
-  filename.AppendInt(getpid());
+  filename.AppendInt(thispid);
   filename.Append('-');
   filename.AppendInt(number++);
   filename.AppendLiteral(".json");

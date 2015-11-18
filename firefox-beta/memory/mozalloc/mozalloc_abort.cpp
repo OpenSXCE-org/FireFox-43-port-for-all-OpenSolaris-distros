@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
  * vim: sw=4 ts=4 et :
  */
@@ -68,7 +72,7 @@ void fillAbortMessage(char (&msg)[N], uintptr_t retAddress) {
 //
 // That segmentation fault will be interpreted as another bug by ASan and as a
 // result, ASan will just exit(1) instead of aborting.
-void abort(void)
+void std::abort(void)
 {
 #ifdef MOZ_WIDGET_ANDROID
     char msg[64] = {};

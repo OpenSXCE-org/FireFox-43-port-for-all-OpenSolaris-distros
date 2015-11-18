@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 /* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*-
  * vim: sw=2 ts=8 et :
  */
@@ -25,9 +29,7 @@ static const char* kBrowserThreadNames[BrowserProcessSubThread::ID_COUNT] = {
 //  "Chrome_FileThread",  // FILE
 //  "Chrome_DBThread",  // DB
 //  "Chrome_HistoryThread",  // HISTORY
-#if defined(OS_LINUX)
   "Gecko_Background_X11Thread",  // BACKGROUND_X11
-#endif
 };
 
 /* static */ StaticMutex BrowserProcessSubThread::sLock;
@@ -36,9 +38,7 @@ BrowserProcessSubThread* BrowserProcessSubThread::sBrowserThreads[ID_COUNT] = {
 //  nullptr,  // FILE
 //  nullptr,  // DB
 //  nullptr,  // HISTORY
-#if defined(OS_LINUX)
   nullptr,  // BACKGROUND_X11
-#endif
 };
 
 BrowserProcessSubThread::BrowserProcessSubThread(ID aId) :

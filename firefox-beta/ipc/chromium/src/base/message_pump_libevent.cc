@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2008 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -6,6 +10,10 @@
 
 #include <errno.h>
 #include <fcntl.h>
+#if defined(OS_SOLARIS)
+#include <unistd.h>
+#include <sys/stat.h>
+#endif
 #if defined(ANDROID) || defined(OS_POSIX)
 #include <unistd.h>
 #endif

@@ -1,4 +1,8 @@
 /*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
+/*
    LZ4 - Fast LZ compression algorithm
    Copyright (C) 2011-2014, Yann Collet.
    BSD 2-Clause License (http://www.opensource.org/licenses/bsd-license.php)
@@ -878,7 +882,7 @@ FORCE_INLINE int LZ4_decompress_generic(
                  )
 {
     /* Local Variables */
-    const BYTE* restrict ip = (const BYTE*) source;
+    const BYTE* ip = (const BYTE*) source;
     const BYTE* ref;
     const BYTE* const iend = ip + inputSize;
 

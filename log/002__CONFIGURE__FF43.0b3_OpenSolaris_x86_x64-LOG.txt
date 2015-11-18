@@ -1,0 +1,809 @@
+creating cache ./config.cache
+checking host system type... i386-pc-solaris2.11
+checking target system type... i386-pc-solaris2.11
+checking build system type... i386-pc-solaris2.11
+checking for gawk... gawk
+checking for python2.7... /opt/csw/bin/python2.7
+Creating Python environment
+New python executable in /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/_virtualenv/bin/python2.7
+Also creating executable in /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/_virtualenv/bin/python
+Installing setuptools, pip...done.
+WARNING: Python.h not found. Install Python development headers.
+Error processing command. Ignoring because optional. (optional:setup.py:python/psutil:build_ext:--inplace)
+checking Python environment is Mozilla virtualenv... yes
+checking for perl5... no
+checking for perl... /opt/csw/bin/perl
+checking for gcc... gcc
+checking whether the C compiler (gcc  ) works... yes
+checking whether the C compiler (gcc  ) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for c++... c++
+checking whether the C++ compiler (c++  ) works... yes
+checking whether the C++ compiler (c++  ) is a cross-compiler... no
+checking whether we are using GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for ranlib... ranlib
+checking for as... /usr/gnu/bin/as
+checking for ar... ar
+checking for ld... ld
+checking for strip... strip
+checking for windres... no
+checking for otool... no
+checking for rustc... no
+checking how to run the C preprocessor... gcc -E
+checking how to run the C++ preprocessor... c++ -E
+checking for a BSD compatible install... /opt/csw/bin/ginstall -c
+checking whether ln -s works... yes
+checking for minimum required perl version >= 5.006... 5.010001
+checking for full perl installation... yes
+checking for doxygen... /usr/bin/doxygen
+checking for autoconf... /opt/csw/bin/autoconf
+checking for unzip... /usr/bin/unzip
+checking for zip... /usr/bin/zip
+checking for xargs... /usr/gnu/bin/xargs
+checking for rpmbuild... :
+checking for genisoimage... :
+checking for gmake... /usr/sfw/bin/gmake
+checking for X... libraries , headers 
+checking for dnet_ntoa in -ldnet... no
+checking for dnet_ntoa in -ldnet_stub... no
+checking for gethostbyname... no
+checking for gethostbyname in -lnsl... yes
+checking for connect... no
+checking for connect in -lsocket... yes
+checking for remove... no
+checking for shmat... no
+checking for IceConnectionNumber in -lICE... yes
+checking that static assertion macros used in autoconf tests work... yes
+checking for --noexecstack option to as... yes
+checking for -z noexecstack option to ld... no
+checking for -z text option to ld... yes
+checking for --build-id option to ld... no
+checking for --ignore-unresolved-symbol option to ld... no
+checking if toolchain supports -mssse3 option... yes
+checking if toolchain supports -msse4.1 option... yes
+checking for x86 AVX2 asm support in compiler... yes
+checking whether the C++ compiler supports -Wno-unused-local-typedef... no
+checking whether the C++ compiler supports -Wno-inline-new-delete... no
+checking whether the C++ compiler supports -Wno-unused-local-typedef... (cached) no
+checking for 64-bit OS... no
+checking whether the C++ compiler (c++  -fno-exceptions -fno-strict-aliasing -fno-rtti  -Wl,-z,text -Wl,-z,ignore -Wl,-R,'$$ORIGIN:$$ORIGIN/..' -Wl,-z,lazyload -Wl,-z,combreloc -Wl,-z,muldefs) actually is a C++ compiler... yes
+checking for ANSI C header files... yes
+checking for working const... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking for gcc c++0x headers bug without rtti... no
+checking for dirent.h that defines DIR... yes
+checking for opendir in -ldir... no
+checking for sys/byteorder.h... yes
+checking for compat.h... no
+checking for getopt.h... yes
+checking for sys/bitypes.h... no
+checking for memory.h... yes
+checking for unistd.h... yes
+checking for gnu/libc-version.h... no
+checking for nl_types.h... yes
+checking for malloc.h... yes
+checking for X11/XKBlib.h... yes
+checking for io.h... no
+checking for cpuid.h... yes
+checking for sys/statvfs.h... yes
+checking for sys/statfs.h... no
+checking for sys/vfs.h... yes
+checking for sys/mount.h... yes
+checking for sys/quota.h... no
+checking for sys/sysmacros.h... yes
+checking for linux/quota.h... no
+checking for linux/if_addr.h... no
+checking for linux/rtnetlink.h... no
+checking for sys/queue.h... yes
+checking for sys/types.h... yes
+checking for netinet/in.h... yes
+checking for byteswap.h... no
+checking for sockaddr_in.sin_len... false
+checking for sockaddr_in6.sin6_len... false
+checking for sockaddr.sa_len... false
+checking for linux/perf_event.h... no
+checking for gethostbyname_r in -lc_r... no
+checking for library containing dlopen... none required
+checking for dlfcn.h... yes
+checking for dladdr... yes
+checking for memmem... no
+checking for socket in -lsocket... yes
+checking for XDrawLines in -lX11... yes
+checking for XextAddDisplay in -lXext... yes
+checking for XtFree in -lXt... yes
+checking for XShmCreateImage in -lXext... yes
+checking for X11/extensions/scrnsaver.h... yes
+checking for XScreenSaverQueryInfo in -lXss... yes
+checking for pthread_create in -lpthreads... no
+checking for pthread_create in -lpthread... yes
+checking whether gcc accepts -pthread... yes
+checking for pthread.h... yes
+checking whether gcc needs -traditional... no
+checking for 8-bit clean memcmp... yes
+checking for stat64... yes
+checking for lstat64... yes
+checking for truncate64... yes
+checking for statvfs64... yes
+checking for statvfs... yes
+checking for statfs64... no
+checking for statfs... yes
+checking for getpagesize... yes
+checking for gmtime_r... yes
+checking for localtime_r... yes
+checking for arc4random... no
+checking for arc4random_buf... no
+checking for clock_gettime(CLOCK_MONOTONIC)... 
+checking for wcrtomb... yes
+checking for mbrtowc... yes
+checking for res_ninit()... no
+checking for iconv in -lc... yes
+checking for iconv()... yes
+checking for iconv() with const input... no
+checking for nl_langinfo and CODESET... yes
+checking for an implementation of va_copy()... yes
+checking whether va_list can be copied by value... yes
+checking whether the C++ "using" keyword resolves ambiguity... yes
+checking for C++ dynamic_cast to void*... yes
+checking for __thread keyword for TLS variables... yes
+checking for __attribute__((always_inline))... yes
+checking for LC_MESSAGES... yes
+checking for localeconv... yes
+checking for malloc.h... (cached) yes
+checking for alloca.h... yes
+checking for strndup... no
+checking for posix_memalign... yes
+checking for memalign... yes
+checking for malloc_usable_size... no
+checking for malloc.h... (cached) yes
+checking whether malloc_usable_size definition can use const argument... yes
+checking for valloc in malloc.h... no
+checking for valloc in unistd.h... no
+checking NSPR selection... source-tree
+checking for YASM assembler... checking for yasm... yasm
+checking for application to build... browser
+checking if app-specific confvars.sh exists... ../browser/confvars.sh
+checking for pkg-config... /usr/bin/pkg-config
+checking for gtk+-2.0 >= 2.18.0 gtk+-unix-print-2.0 glib-2.0 >= 2.22 gobject-2.0 gdk-x11-2.0... yes
+checking MOZ_GTK2_CFLAGS... -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gtk-unix-print-2.0  
+checking MOZ_GTK2_LIBS... -R/usr/lib -R/lib -L/lib -lgtk-x11-2.0 -lsecdb -ltsol -latk-1.0 -lpangoft2-1.0 -lfreetype -lgdk-x11-2.0 -lgdk_pixbuf-2.0 -lm -lpangocairo-1.0 -lgio-2.0 -lfontconfig -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXfixes -lcairo -lX11  
+checking for pango >= 1.22.0... yes
+checking _PANGOCHK_CFLAGS... -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+checking _PANGOCHK_LIBS... -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lglib-2.0  
+checking for pango >= 1.22.0 pangoft2 >= 1.22.0 pangocairo >= 1.22.0... yes
+checking MOZ_PANGO_CFLAGS... -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng12  
+checking MOZ_PANGO_LIBS... -R/lib -L/lib -lpangoft2-1.0 -lfreetype -lfontconfig -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lgmodule-2.0 -lglib-2.0  
+checking for gtk+-2.0 >= 2.14... yes
+checking _GTKCHECK_CFLAGS... -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12  
+checking _GTKCHECK_LIBS... -R/usr/lib -R/lib -L/lib -lgtk-x11-2.0 -lsecdb -ltsol -lgdk-x11-2.0 -latk-1.0 -lpangoft2-1.0 -lgdk_pixbuf-2.0 -lm -lpangocairo-1.0 -lgio-2.0 -lXext -lXrender -lXinerama -lXi -lXrandr -lXcursor -lXcomposite -lXdamage -lXfixes -lcairo -lX11 -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lglib-2.0  
+checking for gio-2.0 >= 2.22... yes
+checking MOZ_GIO_CFLAGS... -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+checking MOZ_GIO_LIBS... -lgio-2.0 -lgobject-2.0 -lgmodule-2.0 -lglib-2.0  
+checking for gconf-2.0 >= 1.2.1 gobject-2.0 ... yes
+checking MOZ_GCONF_CFLAGS... -DORBIT2=1 -D_REENTRANT -D_PTHREADS -I/usr/include/gconf/2 -I/usr/include/orbit-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+checking MOZ_GCONF_LIBS... -lgconf-2 -lgobject-2.0 -lglib-2.0  
+checking for dbus-1 >= 0.60... yes
+checking MOZ_DBUS_CFLAGS... -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include  
+checking MOZ_DBUS_LIBS... -ldbus-1 -lpthread -lrt  
+checking for dbus-glib-1 >= 0.60... yes
+checking MOZ_DBUS_GLIB_CFLAGS... -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+checking MOZ_DBUS_GLIB_LIBS... -ldbus-glib-1 -ldbus-1 -lpthread -lrt -lgobject-2.0 -lglib-2.0  
+checking __attribute__ ((aligned ())) support... trying 64
+64
+checking for java... /bin/java
+checking for javac... /bin/javac
+checking for javah... /bin/javah
+checking for jar... /bin/jar
+checking for jarsigner... /bin/jarsigner
+checking for keytool... /bin/keytool
+checking for gnutar... no
+checking for gtar... gtar
+checking for wget... wget
+checking for valid C compiler optimization flags... yes
+checking for __cxa_demangle... yes
+checking for unwind.h... yes
+checking for _Unwind_Backtrace... yes
+checking for -pipe support... yes
+checking whether C compiler supports -fprofile-generate... yes
+checking whether C compiler supports -fno-integrated-as... no
+checking what kind of list files are supported by the linker... list
+checking for glib-2.0 >= 1.3.7 gobject-2.0... yes
+checking GLIB_CFLAGS... -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+checking GLIB_LIBS... -lgobject-2.0 -lglib-2.0  
+checking for freetype2 >= 6.1.0... yes
+checking FT2_CFLAGS... -I/usr/include/freetype2  
+checking FT2_LIBS... -R/lib -L/lib -lfreetype  
+checking for FT_Bitmap_Size.y_ppem... yes
+checking for FT_GlyphSlot_Embolden... yes
+checking for FT_Load_Sfnt_Table... yes
+checking for fontconfig/fcfreetype.h... yes
+checking for fontconfig... yes
+checking _FONTCONFIG_CFLAGS...  
+checking _FONTCONFIG_LIBS... -lfontconfig  
+checking for stdint.h... yes
+checking for inttypes.h... yes
+checking for posix_fadvise... yes
+checking for posix_fallocate... yes
+updating cache ./config.cache
+creating ./config.status
+intl/icu/target> configuring
+intl/icu/target> running /bin/sh /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/intl/icu/source/configure --build=i386-pc-solaris2.11 --host=i386-pc-solaris2.11 --enable-static --disable-shared --disable-extras --disable-icuio --disable-layout --disable-tests --disable-samples --disable-strict --cache-file=/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/intl/icu/target/config.cache
+js/src/ctypes/libffi> configuring
+js/src/ctypes/libffi> running /bin/sh /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/js/src/ctypes/libffi/configure --build=i386-pc-solaris2.11 --host=i386-pc-solaris2.11 --disable-shared --enable-static --disable-raw-api --with-pic AS=$(CC) CC=gcc CXX=c++ CPP=gcc -E LD=ld AR=ar RANLIB=ranlib STRIP=strip --cache-file=/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/js/src/ctypes/libffi/config.cache
+intl/icu/target> configure: creating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/intl/icu/target/config.cache
+intl/icu/target> checking for ICU version numbers... release 55.1, library 55.1, unicode version 7.0
+intl/icu/target> checking build system type... i386-pc-solaris2.11
+intl/icu/target> checking host system type... i386-pc-solaris2.11
+intl/icu/target> checking whether to build debug libraries... no
+intl/icu/target> checking whether to build release libraries... yes
+intl/icu/target> checking for i386-pc-solaris2.11-clang... gcc
+intl/icu/target> checking whether the C compiler works... yes
+intl/icu/target> checking for C compiler default output file name... a.out
+intl/icu/target> checking for suffix of executables... 
+intl/icu/target> checking whether we are cross compiling... no
+intl/icu/target> checking for suffix of object files... o
+intl/icu/target> checking whether we are using the GNU C compiler... yes
+intl/icu/target> checking whether gcc accepts -g... yes
+intl/icu/target> checking for gcc option to accept ISO C89... none needed
+intl/icu/target> checking whether we are using the GNU C++ compiler... yes
+intl/icu/target> checking whether c++ accepts -g... yes
+intl/icu/target> checking for i386-pc-solaris2.11-pkg-config... no
+intl/icu/target> checking for pkg-config... /usr/bin/pkg-config
+intl/icu/target> checking pkg-config is at least version 0.20... yes
+intl/icu/target> checking for ICULEHB... no
+intl/icu/target> checking how to run the C preprocessor... gcc -E
+intl/icu/target> checking for a BSD-compatible install... /opt/csw/bin/ginstall -c
+intl/icu/target> checking for gmake... /usr/sfw/bin/gmake
+intl/icu/target> checking for doxygen... /usr/bin/doxygen
+intl/icu/target> checking checking for executable suffix... 
+intl/icu/target> checking whether strict compiling is on... no
+intl/icu/target> checking for grep that handles long lines and -e... /opt/csw/bin/ggrep
+intl/icu/target> checking for egrep... /opt/csw/bin/ggrep -E
+intl/icu/target> checking for ANSI C header files... yes
+intl/icu/target> checking for sys/types.h... yes
+intl/icu/target> checking for sys/stat.h... yes
+intl/icu/target> checking for stdlib.h... yes
+intl/icu/target> checking for string.h... yes
+intl/icu/target> checking for memory.h... yes
+intl/icu/target> checking for strings.h... yes
+intl/icu/target> checking for inttypes.h... yes
+intl/icu/target> checking for stdint.h... yes
+intl/icu/target> checking for unistd.h... yes
+intl/icu/target> checking size of void *... 4
+intl/icu/target> checking whether runnable 64 bit binaries are built by default... no
+intl/icu/target> checking which Makefile fragment to use for i386-pc-solaris2.11... mh-solaris-gcc
+intl/icu/target> checking for floor in -lm... yes
+intl/icu/target> checking whether to build shared libraries... no
+intl/icu/target> checking whether to build static libraries... yes
+intl/icu/target> checking whether we can use static library optimization option... yes
+intl/icu/target> checking whether to enable auto cleanup of libraries... no
+intl/icu/target> checking whether to enable draft APIs... yes
+intl/icu/target> checking for i386-pc-solaris2.11-ranlib... ranlib
+intl/icu/target> checking for i386-pc-solaris2.11-ar... ar
+intl/icu/target> checking whether to enable renaming of symbols... yes
+intl/icu/target> checking whether to enable function and data tracing... no
+intl/icu/target> checking elf.h usability... yes
+intl/icu/target> checking elf.h presence... yes
+intl/icu/target> checking for elf.h... yes
+intl/icu/target> checking whether to enable dynamic loading of plugins... yes
+intl/icu/target> checking dlfcn.h usability... yes
+intl/icu/target> checking dlfcn.h presence... yes
+intl/icu/target> checking for dlfcn.h... yes
+intl/icu/target> checking for library containing dlopen... none required
+intl/icu/target> checking for dlopen... yes
+intl/icu/target> checking for gettimeofday... yes
+intl/icu/target> checking if we have a C++ compiler... Good
+intl/icu/target> checking if #include <string> works... yes
+intl/icu/target> checking if #include <atomic> works... yes
+intl/icu/target> checking for pthread_attr_init in -lpthread... yes
+intl/icu/target> checking for mmap... yes
+intl/icu/target> checking for genccode assembly... -a gcc
+intl/icu/target> checking for inttypes.h... (cached) yes
+intl/icu/target> checking dirent.h usability... yes
+intl/icu/target> checking dirent.h presence... yes
+intl/icu/target> checking for dirent.h... yes
+intl/icu/target> checking whether byte ordering is bigendian... no
+intl/icu/target> checking for nl_langinfo... yes
+intl/icu/target> checking for nl_langinfo's argument to obtain the codeset... CODESET
+intl/icu/target> checking for namespace support... yes
+intl/icu/target> checking for properly overriding new and delete... yes
+intl/icu/target> checking for placement new and delete... yes
+intl/icu/target> checking for popen... yes
+intl/icu/target> checking for tzset... yes
+intl/icu/target> checking for tzname... yes
+intl/icu/target> checking for timezone... yes
+intl/icu/target> checking for int8_t... yes
+intl/icu/target> checking for uint8_t... yes
+intl/icu/target> checking for int16_t... yes
+intl/icu/target> checking for uint16_t... yes
+intl/icu/target> checking for int32_t... yes
+intl/icu/target> checking for uint32_t... yes
+intl/icu/target> checking for int64_t... yes
+intl/icu/target> checking for uint64_t... yes
+intl/icu/target> checking wchar.h usability... yes
+intl/icu/target> checking wchar.h presence... yes
+intl/icu/target> checking for wchar.h... yes
+intl/icu/target> checking for library containing wcscpy... none required
+intl/icu/target> checking size of wchar_t... 4
+intl/icu/target> checking for UTF-16 string literal support... C++ only
+intl/icu/target> checking for a library suffix to use... none
+intl/icu/target> CPPFLAGS= -DU_USING_ICU_NAMESPACE=0 -DU_NO_DEFAULT_INCLUDE_UTF_HEADERS=1 -DUCONFIG_NO_LEGACY_CONVERSION -DUCONFIG_NO_TRANSLITERATION -DUCONFIG_NO_REGULAR_EXPRESSIONS -DUCONFIG_NO_BREAK_ITERATION -DUCONFIG_NO_IDNA -DU_CHARSET_IS_UTF8 -I/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/intl/icu/source/common -I/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/intl/icu/source/i18n  $(THREADSCPPFLAGS)  -DU_HAVE_ELF_H=1 -DU_HAVE_ATOMIC=1 
+intl/icu/target> CFLAGS=-fPIC -std=gnu99 -fgnu89-inline -fno-strict-aliasing -fno-math-errno -pthread -pipe -g -UDEBUG -DNDEBUG -O -DU_STATIC_IMPLEMENTATION -fvisibility=hidden $(THREADSCFLAGS) 
+intl/icu/target> CXXFLAGS=-fPIC -fno-exceptions -fno-strict-aliasing -frtti -fno-exceptions -fno-math-errno -std=gnu++0x -pthread -pipe -g -UDEBUG -DNDEBUG -O -DU_STATIC_IMPLEMENTATION -fvisibility=hidden $(THREADSCXXFLAGS) 
+intl/icu/target> configure: updating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/intl/icu/target/config.cache
+intl/icu/target> configure: creating ./config.status
+intl/icu/target> 
+intl/icu/target> ICU for C/C++ 55.1 is ready to be built.
+intl/icu/target> === Important Notes: ===
+intl/icu/target> Data Packaging: static
+intl/icu/target>  This means: ICU data will be stored in a static library.
+intl/icu/target>  To locate data: ICU will use the linked data library. If linked with the stub library located in stubdata/, the application can use udata_setCommonData() or set a data path to override.
+intl/icu/target> Building ICU: Use a GNU make such as /usr/sfw/bin/gmake to build ICU.
+intl/icu/target> checking the version of "/usr/sfw/bin/gmake"... 3.81 (we wanted at least 3.80)
+intl/icu/target> ok
+intl/icu/target> config.status: creating icudefs.mk
+intl/icu/target> config.status: creating Makefile
+intl/icu/target> config.status: creating data/pkgdataMakefile
+intl/icu/target> config.status: creating config/Makefile.inc
+intl/icu/target> config.status: creating config/icu.pc
+intl/icu/target> config.status: creating config/pkgdataMakefile
+intl/icu/target> config.status: creating data/Makefile
+intl/icu/target> config.status: creating stubdata/Makefile
+intl/icu/target> config.status: creating common/Makefile
+intl/icu/target> config.status: creating i18n/Makefile
+intl/icu/target> config.status: creating layout/Makefile
+intl/icu/target> config.status: creating layoutex/Makefile
+intl/icu/target> config.status: creating io/Makefile
+intl/icu/target> config.status: creating extra/Makefile
+intl/icu/target> config.status: creating extra/uconv/Makefile
+intl/icu/target> config.status: creating extra/uconv/pkgdataMakefile
+intl/icu/target> config.status: creating extra/scrptrun/Makefile
+intl/icu/target> config.status: creating tools/Makefile
+intl/icu/target> config.status: creating tools/ctestfw/Makefile
+intl/icu/target> config.status: creating tools/toolutil/Makefile
+intl/icu/target> config.status: creating tools/makeconv/Makefile
+intl/icu/target> config.status: creating tools/genrb/Makefile
+intl/icu/target> config.status: creating tools/genccode/Makefile
+intl/icu/target> config.status: creating tools/gencmn/Makefile
+intl/icu/target> config.status: creating tools/gencnval/Makefile
+intl/icu/target> config.status: creating tools/gendict/Makefile
+intl/icu/target> config.status: creating tools/gentest/Makefile
+intl/icu/target> config.status: creating tools/gennorm2/Makefile
+intl/icu/target> config.status: creating tools/genbrk/Makefile
+intl/icu/target> config.status: creating tools/gensprep/Makefile
+intl/icu/target> config.status: creating tools/icuinfo/Makefile
+intl/icu/target> config.status: creating tools/icupkg/Makefile
+intl/icu/target> config.status: creating tools/icuswap/Makefile
+intl/icu/target> config.status: creating tools/pkgdata/Makefile
+intl/icu/target> config.status: creating tools/tzcode/Makefile
+intl/icu/target> config.status: creating tools/gencfu/Makefile
+intl/icu/target> config.status: creating test/Makefile
+intl/icu/target> config.status: creating test/compat/Makefile
+intl/icu/target> config.status: creating test/testdata/Makefile
+intl/icu/target> config.status: creating test/testdata/pkgdataMakefile
+intl/icu/target> config.status: creating test/hdrtst/Makefile
+intl/icu/target> config.status: creating test/intltest/Makefile
+intl/icu/target> config.status: creating test/cintltst/Makefile
+intl/icu/target> config.status: creating test/iotest/Makefile
+intl/icu/target> config.status: creating test/letest/Makefile
+intl/icu/target> config.status: creating test/perf/Makefile
+intl/icu/target> config.status: creating test/perf/collationperf/Makefile
+intl/icu/target> config.status: creating test/perf/collperf/Makefile
+intl/icu/target> config.status: creating test/perf/collperf2/Makefile
+intl/icu/target> config.status: creating test/perf/dicttrieperf/Makefile
+intl/icu/target> config.status: creating test/perf/ubrkperf/Makefile
+intl/icu/target> config.status: creating test/perf/charperf/Makefile
+intl/icu/target> config.status: creating test/perf/convperf/Makefile
+intl/icu/target> config.status: creating test/perf/normperf/Makefile
+intl/icu/target> config.status: creating test/perf/DateFmtPerf/Makefile
+intl/icu/target> config.status: creating test/perf/howExpensiveIs/Makefile
+intl/icu/target> config.status: creating test/perf/strsrchperf/Makefile
+intl/icu/target> config.status: creating test/perf/unisetperf/Makefile
+intl/icu/target> config.status: creating test/perf/usetperf/Makefile
+intl/icu/target> config.status: creating test/perf/ustrperf/Makefile
+intl/icu/target> config.status: creating test/perf/utfperf/Makefile
+intl/icu/target> config.status: creating test/perf/utrie2perf/Makefile
+intl/icu/target> config.status: creating test/perf/leperf/Makefile
+intl/icu/target> config.status: creating samples/Makefile
+intl/icu/target> config.status: creating samples/date/Makefile
+intl/icu/target> config.status: creating samples/cal/Makefile
+intl/icu/target> config.status: creating samples/layout/Makefile
+
+js/src/ctypes/libffi> configure: creating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/js/src/ctypes/libffi/config.cache
+js/src/ctypes/libffi> checking build system type... i386-pc-solaris2.11
+js/src/ctypes/libffi> checking host system type... i386-pc-solaris2.11
+js/src/ctypes/libffi> checking target system type... i386-pc-solaris2.11
+js/src/ctypes/libffi> checking for gsed... /opt/csw/bin/gsed
+js/src/ctypes/libffi> checking for a BSD-compatible install... /opt/csw/bin/ginstall -c
+js/src/ctypes/libffi> checking whether build environment is sane... yes
+js/src/ctypes/libffi> checking for a thread-safe mkdir -p... /opt/csw/bin/gmkdir -p
+js/src/ctypes/libffi> checking for gawk... gawk
+js/src/ctypes/libffi> checking whether make sets $(MAKE)... yes
+js/src/ctypes/libffi> checking whether make supports nested variables... yes
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-gcc... gcc
+js/src/ctypes/libffi> checking whether the C compiler works... yes
+js/src/ctypes/libffi> checking for C compiler default output file name... a.out
+js/src/ctypes/libffi> checking for suffix of executables... 
+js/src/ctypes/libffi> checking whether we are cross compiling... no
+js/src/ctypes/libffi> checking for suffix of object files... o
+js/src/ctypes/libffi> checking whether we are using the GNU C compiler... yes
+js/src/ctypes/libffi> checking whether gcc accepts -g... yes
+js/src/ctypes/libffi> checking for gcc option to accept ISO C89... none needed
+js/src/ctypes/libffi> checking whether gcc understands -c and -o together... yes
+js/src/ctypes/libffi> checking for style of include used by make... GNU
+js/src/ctypes/libffi> checking dependency style of gcc... gcc3
+js/src/ctypes/libffi> checking whether we are using the GNU C++ compiler... yes
+js/src/ctypes/libffi> checking whether c++ accepts -g... yes
+js/src/ctypes/libffi> checking dependency style of c++... gcc3
+js/src/ctypes/libffi> checking dependency style of gcc... gcc3
+js/src/ctypes/libffi> checking how to print strings... print -r
+js/src/ctypes/libffi> checking for a sed that does not truncate output... /opt/csw/bin/gsed
+js/src/ctypes/libffi> checking for grep that handles long lines and -e... /opt/csw/bin/ggrep
+js/src/ctypes/libffi> checking for egrep... /opt/csw/bin/ggrep -E
+js/src/ctypes/libffi> checking for fgrep... /opt/csw/bin/ggrep -F
+js/src/ctypes/libffi> checking for ld used by gcc... ld
+js/src/ctypes/libffi> checking if the linker (ld) is GNU ld... yes
+js/src/ctypes/libffi> checking for BSD- or MS-compatible name lister (nm)... /usr/gnu/bin/nm -B
+js/src/ctypes/libffi> checking the name lister (/usr/gnu/bin/nm -B) interface... BSD nm
+js/src/ctypes/libffi> checking whether ln -s works... yes
+js/src/ctypes/libffi> checking the maximum length of command line arguments... 786240
+js/src/ctypes/libffi> checking whether the shell understands some XSI constructs... yes
+js/src/ctypes/libffi> checking whether the shell understands "+="... yes
+js/src/ctypes/libffi> checking how to convert i386-pc-solaris2.11 file names to i386-pc-solaris2.11 format... func_convert_file_noop
+js/src/ctypes/libffi> checking how to convert i386-pc-solaris2.11 file names to toolchain format... func_convert_file_noop
+js/src/ctypes/libffi> checking for ld option to reload object files... -r
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-objdump... no
+js/src/ctypes/libffi> checking for objdump... objdump
+js/src/ctypes/libffi> checking how to recognize dependent libraries... pass_all
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-dlltool... no
+js/src/ctypes/libffi> checking for dlltool... no
+js/src/ctypes/libffi> checking how to associate runtime and link libraries... print -r --
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-ar... ar
+js/src/ctypes/libffi> checking for archiver @FILE support... @
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-strip... strip
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-ranlib... ranlib
+js/src/ctypes/libffi> checking command to parse /usr/gnu/bin/nm -B output from gcc object... ok
+js/src/ctypes/libffi> checking for sysroot... no
+js/src/ctypes/libffi> checking for i386-pc-solaris2.11-mt... no
+js/src/ctypes/libffi> checking for mt... mt
+js/src/ctypes/libffi> checking if mt is a manifest tool... no
+js/src/ctypes/libffi> checking how to run the C preprocessor... gcc -E
+js/src/ctypes/libffi> checking for ANSI C header files... yes
+js/src/ctypes/libffi> checking for sys/types.h... yes
+js/src/ctypes/libffi> checking for sys/stat.h... yes
+js/src/ctypes/libffi> checking for stdlib.h... yes
+js/src/ctypes/libffi> checking for string.h... yes
+js/src/ctypes/libffi> checking for memory.h... yes
+js/src/ctypes/libffi> checking for strings.h... yes
+js/src/ctypes/libffi> checking for inttypes.h... yes
+js/src/ctypes/libffi> checking for stdint.h... yes
+js/src/ctypes/libffi> checking for unistd.h... yes
+js/src/ctypes/libffi> checking for dlfcn.h... yes
+js/src/ctypes/libffi> checking for objdir... .libs
+js/src/ctypes/libffi> checking if gcc supports -fno-rtti -fno-exceptions... no
+js/src/ctypes/libffi> checking for gcc option to produce PIC... -fPIC -DPIC
+js/src/ctypes/libffi> checking if gcc PIC flag -fPIC -DPIC works... yes
+js/src/ctypes/libffi> checking if gcc static flag -static works... no
+js/src/ctypes/libffi> checking if gcc supports -c -o file.o... yes
+js/src/ctypes/libffi> checking if gcc supports -c -o file.o... (cached) yes
+js/src/ctypes/libffi> checking whether the gcc linker (ld) supports shared libraries... yes
+js/src/ctypes/libffi> checking dynamic linker characteristics... solaris2.11 ld.so
+js/src/ctypes/libffi> checking how to hardcode library paths into programs... immediate
+js/src/ctypes/libffi> checking whether stripping libraries is possible... yes
+js/src/ctypes/libffi> checking if libtool supports shared libraries... yes
+js/src/ctypes/libffi> checking whether to build shared libraries... no
+js/src/ctypes/libffi> checking whether to build static libraries... yes
+js/src/ctypes/libffi> checking how to run the C++ preprocessor... c++ -E
+js/src/ctypes/libffi> checking for ld used by c++... ld
+js/src/ctypes/libffi> checking if the linker (ld) is GNU ld... yes
+js/src/ctypes/libffi> checking whether the c++ linker (ld) supports shared libraries... yes
+js/src/ctypes/libffi> checking for c++ option to produce PIC... -fPIC -DPIC
+js/src/ctypes/libffi> checking if c++ PIC flag -fPIC -DPIC works... yes
+js/src/ctypes/libffi> checking if c++ static flag -static works... no
+js/src/ctypes/libffi> checking if c++ supports -c -o file.o... yes
+js/src/ctypes/libffi> checking if c++ supports -c -o file.o... (cached) yes
+js/src/ctypes/libffi> checking whether the c++ linker (ld) supports shared libraries... yes
+js/src/ctypes/libffi> checking dynamic linker characteristics... solaris2.11 ld.so
+js/src/ctypes/libffi> checking how to hardcode library paths into programs... immediate
+js/src/ctypes/libffi> checking size of size_t... 4
+js/src/ctypes/libffi> checking for C compiler vendor... gnu
+js/src/ctypes/libffi> checking whether C compiler accepts -fstrict-aliasing... yes
+js/src/ctypes/libffi> checking whether C compiler accepts -ffast-math... yes
+js/src/ctypes/libffi> checking for gcc architecture flag... 
+js/src/ctypes/libffi> checking for x86 cpuid 0 output... 5:756e6547:6c65746e:49656e69
+js/src/ctypes/libffi> checking for x86 cpuid 1 output... 206a7:800:209:78bfbff
+js/src/ctypes/libffi> checking whether C compiler accepts -march=corei7-avx... yes
+js/src/ctypes/libffi> checking for gcc architecture flag... -march=corei7-avx
+js/src/ctypes/libffi> checking whether C compiler accepts -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=corei7-avx... yes
+js/src/ctypes/libffi> checking CFLAGS for maximum warnings... -Wall
+js/src/ctypes/libffi> checking whether to enable maintainer-specific portions of Makefiles... no
+js/src/ctypes/libffi> checking sys/mman.h usability... yes
+js/src/ctypes/libffi> checking sys/mman.h presence... yes
+js/src/ctypes/libffi> checking for sys/mman.h... yes
+js/src/ctypes/libffi> checking for mmap... yes
+js/src/ctypes/libffi> checking for sys/mman.h... (cached) yes
+js/src/ctypes/libffi> checking for mmap... (cached) yes
+js/src/ctypes/libffi> checking whether read-only mmap of a plain file works... yes
+js/src/ctypes/libffi> checking whether mmap from /dev/zero works... yes
+js/src/ctypes/libffi> checking for MAP_ANON(YMOUS)... yes
+js/src/ctypes/libffi> checking whether mmap with MAP_ANON(YMOUS) works... yes
+js/src/ctypes/libffi> checking for ANSI C header files... (cached) yes
+js/src/ctypes/libffi> checking for memcpy... yes
+js/src/ctypes/libffi> checking for size_t... yes
+js/src/ctypes/libffi> checking for working alloca.h... yes
+js/src/ctypes/libffi> checking for alloca... yes
+js/src/ctypes/libffi> checking size of double... 8
+js/src/ctypes/libffi> checking size of long double... 12
+js/src/ctypes/libffi> checking whether byte ordering is bigendian... no
+js/src/ctypes/libffi> checking assembler .cfi pseudo-op support... yes
+js/src/ctypes/libffi> checking assembler supports pc related relocs... yes
+js/src/ctypes/libffi> checking assembler .ascii pseudo-op support... yes
+js/src/ctypes/libffi> checking assembler .string pseudo-op support... yes
+js/src/ctypes/libffi> checking for _ prefix in compiled symbols... no
+js/src/ctypes/libffi> checking whether .eh_frame section should be read-only... no
+js/src/ctypes/libffi> checking for __attribute__((visibility("hidden")))... yes
+js/src/ctypes/libffi> configure: updating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/js/src/ctypes/libffi/config.cache
+js/src/ctypes/libffi> checking that generated files are newer than configure... done
+js/src/ctypes/libffi> configure: creating ./config.status
+js/src/ctypes/libffi> config.status: creating include/Makefile
+js/src/ctypes/libffi> config.status: creating include/ffi.h
+js/src/ctypes/libffi> config.status: creating Makefile
+js/src/ctypes/libffi> config.status: creating testsuite/Makefile
+js/src/ctypes/libffi> config.status: creating man/Makefile
+js/src/ctypes/libffi> config.status: creating libffi.pc
+js/src/ctypes/libffi> config.status: creating fficonfig.h
+js/src/ctypes/libffi> config.status: linking /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/js/src/ctypes/libffi/src/x86/ffitarget.h to include/ffitarget.h
+js/src/ctypes/libffi> config.status: executing buildir commands
+js/src/ctypes/libffi> config.status: skipping top_srcdir/Makefile - not created
+js/src/ctypes/libffi> config.status: executing depfiles commands
+js/src/ctypes/libffi> config.status: executing libtool commands
+js/src/ctypes/libffi> config.status: executing include commands
+js/src/ctypes/libffi> config.status: executing src commands
+
+nsprpub> configuring
+nsprpub> running /bin/sh /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/nsprpub/configure --build=i386-pc-solaris2.11 --enable-application=browser --prefix=/usr/lib/firefox43.0b3 --enable-official-branding --disable-updater --enable-debug-symbols=no --enable-update-channel=esr --disable-tests --enable-jemalloc --disable-dtrace --disable-xinerama --disable-crashreporter --disable-pulseaudio --disable-gstreamer --with-intl-api --disable-debug --enable-ipc --enable-default-toolkit=cairo-gtk2 --with-dist-prefix=/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/dist --with-mozilla --disable-debug --enable-optimize AS=$(CC) CC= CXX= CPP=gcc -E LD=ld AR=ar RANLIB=ranlib STRIP=strip --cache-file=/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/nsprpub/config.cache
+js/src> configuring
+js/src> running /bin/sh /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/js/src/configure --enable-application=browser --prefix=/usr/lib/firefox43.0b3 --enable-official-branding --disable-updater --enable-debug-symbols=no --enable-update-channel=esr --disable-tests --enable-jemalloc --disable-dtrace --disable-xinerama --disable-crashreporter --disable-pulseaudio --disable-gstreamer --with-intl-api --disable-debug --enable-ipc --enable-default-toolkit=cairo-gtk2 --enable-threadsafe --enable-ctypes --disable-shared-js --disable-export-js --with-nspr-cflags=-I/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/dist/include/nspr --with-nspr-libs=-L/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/dist/lib -lnspr4 -lplc4 -lplds4 --prefix=/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/dist --enable-jemalloc --cache-file=/export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/config.cache
+nsprpub> configure: WARNING: unrecognized options: --enable-application, --enable-official-branding, --disable-updater, --enable-update-channel, --disable-tests, --enable-jemalloc, --disable-dtrace, --disable-xinerama, --disable-crashreporter, --disable-pulseaudio, --disable-gstreamer, --with-intl-api, --enable-ipc, --enable-default-toolkit
+nsprpub> configure: creating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/nsprpub/config.cache
+nsprpub> checking build system type... i386-pc-solaris2.11
+nsprpub> checking host system type... i386-pc-solaris2.11
+nsprpub> checking target system type... i386-pc-solaris2.11
+nsprpub> checking for whoami... /usr/gnu/bin/whoami
+nsprpub> checking for gcc... cc
+nsprpub> checking whether the C compiler works... yes
+nsprpub> checking for C compiler default output file name... a.out
+nsprpub> checking for suffix of executables... 
+nsprpub> checking whether we are cross compiling... no
+nsprpub> checking for suffix of object files... o
+nsprpub> checking whether we are using the GNU C compiler... yes
+nsprpub> checking whether cc accepts -g... yes
+nsprpub> checking for cc option to accept ISO C89... none needed
+nsprpub> checking for ranlib... ranlib
+nsprpub> checking for as... /usr/gnu/bin/as
+nsprpub> checking for ar... /usr/gnu/bin/ar
+nsprpub> checking for ld... /usr/gnu/bin/ld
+nsprpub> checking for strip... /usr/gnu/bin/strip
+nsprpub> checking for windres... no
+nsprpub> checking how to run the C preprocessor... gcc -E
+nsprpub> checking for gcc -pipe support... no
+nsprpub> checking whether C compiler supports -fprofile-generate... yes
+nsprpub> checking for visibility(hidden) attribute... yes
+nsprpub> checking for visibility pragma support... yes
+nsprpub> checking for perl5... no
+nsprpub> checking for perl... /opt/csw/bin/perl
+nsprpub> checking for dlopen in -ldl... yes
+nsprpub> checking dlfcn.h usability... yes
+nsprpub> checking dlfcn.h presence... yes
+nsprpub> checking for dlfcn.h... yes
+nsprpub> checking whether cc needs -traditional... no
+nsprpub> checking for dladdr... yes
+nsprpub> checking for gettid... no
+nsprpub> checking for lchown... yes
+nsprpub> checking for setpriority... yes
+nsprpub> checking for strerror... yes
+nsprpub> checking for syscall... yes
+nsprpub> checking for pthread_create in -lpthreads... no
+nsprpub> checking for pthread_create in -lpthread... yes
+nsprpub> checking whether cc accepts -pthread... yes
+nsprpub> configure: updating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/nsprpub/config.cache
+nsprpub> configure: creating ./config.status
+nsprpub> configure: WARNING: unrecognized options: --enable-application, --enable-official-branding, --disable-updater, --enable-update-channel, --disable-tests, --enable-jemalloc, --disable-dtrace, --disable-xinerama, --disable-crashreporter, --disable-pulseaudio, --disable-gstreamer, --with-intl-api, --enable-ipc, --enable-default-toolkit
+nsprpub> config.status: creating Makefile
+nsprpub> config.status: creating config/Makefile
+nsprpub> config.status: creating config/autoconf.mk
+nsprpub> config.status: creating config/nsprincl.mk
+nsprpub> config.status: creating config/nsprincl.sh
+nsprpub> config.status: creating config/nspr-config
+nsprpub> config.status: creating config/nspr.pc
+nsprpub> config.status: creating lib/Makefile
+nsprpub> config.status: creating lib/ds/Makefile
+nsprpub> config.status: creating lib/libc/Makefile
+nsprpub> config.status: creating lib/libc/include/Makefile
+nsprpub> config.status: creating lib/libc/src/Makefile
+nsprpub> config.status: creating lib/tests/Makefile
+nsprpub> config.status: creating pkg/Makefile
+nsprpub> config.status: creating pr/Makefile
+nsprpub> config.status: creating pr/include/Makefile
+nsprpub> config.status: creating pr/include/md/Makefile
+nsprpub> config.status: creating pr/include/obsolete/Makefile
+nsprpub> config.status: creating pr/include/private/Makefile
+nsprpub> config.status: creating pr/src/Makefile
+nsprpub> config.status: creating pr/src/io/Makefile
+nsprpub> config.status: creating pr/src/linking/Makefile
+nsprpub> config.status: creating pr/src/malloc/Makefile
+nsprpub> config.status: creating pr/src/md/Makefile
+nsprpub> config.status: creating pr/src/md/unix/Makefile
+nsprpub> config.status: creating pr/src/memory/Makefile
+nsprpub> config.status: creating pr/src/misc/Makefile
+nsprpub> config.status: creating pr/src/threads/Makefile
+nsprpub> config.status: creating pr/tests/Makefile
+nsprpub> config.status: creating pr/tests/dll/Makefile
+nsprpub> config.status: creating pkg/solaris/Makefile
+nsprpub> config.status: creating pkg/solaris/SUNWpr/Makefile
+nsprpub> config.status: creating pkg/solaris/SUNWprd/Makefile
+nsprpub> config.status: creating pr/src/pthreads/Makefile
+nsprpub> config.status: executing default commands
+
+js/src> loading cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/config.cache
+js/src> checking host system type... i386-pc-solaris2.11
+js/src> checking target system type... i386-pc-solaris2.11
+js/src> checking build system type... i386-pc-solaris2.11
+js/src> checking for gawk... (cached) gawk
+js/src> checking for perl5... (cached) /opt/csw/bin/perl
+js/src> checking for gcc... (cached) gcc
+js/src> checking whether the C compiler (gcc  ) works... yes
+js/src> checking whether the C compiler (gcc  ) is a cross-compiler... no
+js/src> checking whether we are using GNU C... (cached) yes
+js/src> checking whether gcc accepts -g... (cached) yes
+js/src> checking for c++... (cached) c++
+js/src> checking whether the C++ compiler (c++  ) works... yes
+js/src> checking whether the C++ compiler (c++  ) is a cross-compiler... no
+js/src> checking whether we are using GNU C++... (cached) yes
+js/src> checking whether c++ accepts -g... (cached) yes
+js/src> checking for ranlib... (cached) ranlib
+js/src> checking for as... (cached) /usr/gnu/bin/as
+js/src> checking for ar... (cached) ar
+js/src> checking for ld... (cached) ld
+js/src> checking for strip... (cached) strip
+js/src> checking for windres... no
+js/src> /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/js/src/configure: line 3364: echo: write error: Broken pipe
+js/src> checking how to run the C preprocessor... (cached) gcc -E
+js/src> checking how to run the C++ preprocessor... (cached) c++ -E
+js/src> checking for sb-conf... no
+js/src> checking for ve... no
+js/src> checking for a BSD compatible install... (cached) /opt/csw/bin/ginstall -c
+js/src> checking whether ln -s works... (cached) yes
+js/src> checking for tar archiver... checking for gnutar... (cached) gtar
+js/src> gtar
+js/src> checking for minimum required perl version >= 5.006... 5.010001
+js/src> checking for full perl installation... yes
+js/src> Using Python from environment variable $PYTHON
+js/src> checking Python environment is Mozilla virtualenv... yes
+js/src> checking for doxygen... (cached) /usr/bin/doxygen
+js/src> checking for autoconf... (cached) /opt/csw/bin/autoconf
+js/src> checking for xargs... (cached) /usr/gnu/bin/xargs
+js/src> checking for gmake... (cached) /usr/sfw/bin/gmake
+js/src> checking for X... (cached) libraries , headers 
+js/src> checking for dnet_ntoa in -ldnet... (cached) no
+js/src> checking for dnet_ntoa in -ldnet_stub... (cached) no
+js/src> checking for gethostbyname... (cached) no
+js/src> checking for gethostbyname in -lnsl... (cached) yes
+js/src> checking for connect... (cached) no
+js/src> checking for connect in -lsocket... (cached) yes
+js/src> checking for remove... (cached) no
+js/src> checking for shmat... (cached) no
+js/src> checking for IceConnectionNumber in -lICE... (cached) yes
+js/src> checking that static assertion macros used in autoconf tests work... (cached) yes
+js/src> checking for --noexecstack option to as... yes
+js/src> checking for -z noexecstack option to ld... no
+js/src> checking for -z text option to ld... yes
+js/src> checking for --build-id option to ld... no
+js/src> checking whether the C++ compiler supports -Wno-inline-new-delete... no
+js/src> checking whether the C++ compiler supports -Wno-unused-local-typedef... no
+js/src> checking whether the C++ compiler supports -Wno-unused-local-typedef... (cached) no
+js/src> checking for 64-bit OS... no
+js/src> checking whether the C++ compiler (c++  -fno-rtti  -Wl,-z,text -Wl,-z,ignore -Wl,-R,'$$ORIGIN:$$ORIGIN/..' -Wl,-z,lazyload -Wl,-z,combreloc -Wl,-z,muldefs) actually is a C++ compiler... yes
+js/src> checking for ANSI C header files... (cached) yes
+js/src> checking for working const... (cached) yes
+js/src> checking for mode_t... (cached) yes
+js/src> checking for off_t... (cached) yes
+js/src> checking for pid_t... (cached) yes
+js/src> checking for size_t... (cached) yes
+js/src> checking for ssize_t... yes
+js/src> checking for endian.h... yes
+js/src> checking for machine/endian.h... no
+js/src> checking for sys/isa_defs.h... yes
+js/src> checking for gcc c++0x headers bug without rtti... (cached) no
+js/src> checking for dirent.h that defines DIR... (cached) yes
+js/src> checking for opendir in -ldir... (cached) no
+js/src> checking for sys/byteorder.h... (cached) yes
+js/src> checking for compat.h... (cached) no
+js/src> checking for getopt.h... (cached) yes
+js/src> checking for sys/bitypes.h... (cached) no
+js/src> checking for memory.h... (cached) yes
+js/src> checking for unistd.h... (cached) yes
+js/src> checking for gnu/libc-version.h... (cached) no
+js/src> checking for nl_types.h... (cached) yes
+js/src> checking for malloc.h... (cached) yes
+js/src> checking for X11/XKBlib.h... (cached) yes
+js/src> checking for io.h... (cached) no
+js/src> checking for cpuid.h... (cached) yes
+js/src> checking for sys/statvfs.h... (cached) yes
+js/src> checking for sys/statfs.h... (cached) no
+js/src> checking for sys/vfs.h... (cached) yes
+js/src> checking for sys/mount.h... (cached) yes
+js/src> checking for sys/quota.h... (cached) no
+js/src> checking for linux/quota.h... (cached) no
+js/src> checking for sys/cdefs.h... yes
+js/src> checking for linux/perf_event.h... (cached) no
+js/src> checking for gethostbyname_r in -lc_r... (cached) no
+js/src> checking for library containing dlopen... (cached) none required
+js/src> checking for dlfcn.h... (cached) yes
+js/src> checking for socket in -lsocket... (cached) yes
+js/src> checking for pthread_create in -lpthreads... (cached) no
+js/src> checking for pthread_create in -lpthread... (cached) yes
+js/src> checking whether gcc accepts -pthread... yes
+js/src> checking whether gcc needs -traditional... (cached) no
+js/src> checking for 8-bit clean memcmp... (cached) yes
+js/src> checking for getc_unlocked... yes
+js/src> checking for _getc_nolock... no
+js/src> checking for gmtime_r... (cached) yes
+js/src> checking for localtime_r... (cached) yes
+js/src> checking for clock_gettime(CLOCK_MONOTONIC)... (cached) 
+js/src> checking for sin in -lm... yes
+js/src> checking for __sincos in -lm... yes
+js/src> checking for log2... yes
+js/src> checking for log1p... yes
+js/src> checking for expm1... yes
+js/src> checking for sqrt1pm1... no
+js/src> checking for acosh... yes
+js/src> checking for asinh... yes
+js/src> checking for atanh... yes
+js/src> checking for cbrt... yes
+js/src> checking for wcrtomb... (cached) yes
+js/src> checking for mbrtowc... (cached) yes
+js/src> checking for res_ninit()... (cached) no
+js/src> checking for nl_langinfo and CODESET... (cached) yes
+js/src> checking for an implementation of va_copy()... (cached) yes
+js/src> checking whether va_list can be copied by value... (cached) yes
+js/src> checking whether the C++ "using" keyword resolves ambiguity... (cached) yes
+js/src> checking for C++ dynamic_cast to void*... (cached) yes
+js/src> checking for __thread keyword for TLS variables... (cached) yes
+js/src> checking for __attribute__((always_inline))... (cached) yes
+js/src> checking for LC_MESSAGES... (cached) yes
+js/src> checking for localeconv... (cached) yes
+js/src> checking NSPR selection... command-line
+js/src> checking for valid optimization flags... yes
+js/src> checking for __cxa_demangle... (cached) yes
+js/src> checking for -pipe support... yes
+js/src> checking whether C compiler supports -fprofile-generate... yes
+js/src> checking for tm_zone tm_gmtoff in struct tm... no
+js/src> checking what kind of list files are supported by the linker... list
+js/src> checking for posix_fadvise... (cached) yes
+js/src> checking for posix_fallocate... (cached) yes
+js/src> checking for malloc.h... (cached) yes
+js/src> checking for alloca.h... (cached) yes
+js/src> checking for strndup... (cached) no
+js/src> checking for posix_memalign... (cached) yes
+js/src> checking for memalign... (cached) yes
+js/src> checking for malloc_usable_size... (cached) no
+js/src> checking for malloc.h... (cached) yes
+js/src> checking whether malloc_usable_size definition can use const argument... yes
+js/src> checking for valloc in malloc.h... no
+js/src> checking for valloc in unistd.h... no
+js/src> checking for setlocale... yes
+js/src> checking for localeconv... (cached) yes
+js/src> updating cache /export/home/martin/DEVEL/FF/43/FF43.0b2__RELEASE/TEST/PATCHCREATION/001__PORTED/RELEASE/RELEASE_TEST/firefox-43.0b3/RELEASE_BUILD/config.cache
+js/src> creating ./config.status
+
+Reticulating splines...
+Finished reading 828 moz.build files in 3.20s
+Processed into 6195 build config descriptors in 8.51s
+Backend executed in 8.69s
+1833 total backend files; 1833 created; 0 updated; 0 unchanged; 0 deleted; 69 -> 667 Makefile
+Total wall time: 21.34s; CPU time: 10.15s; Efficiency: 48%; Untracked: 0.94s

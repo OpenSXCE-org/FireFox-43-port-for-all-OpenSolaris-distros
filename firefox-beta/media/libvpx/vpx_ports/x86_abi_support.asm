@@ -1,3 +1,7 @@
+;/*
+;* Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+;* FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+;*/
 ;
 ;  Copyright (c) 2010 The WebM project authors. All Rights Reserved.
 ;
@@ -231,6 +235,11 @@
   %else
     %define HIDDEN_DATA(x) x
   %endif
+  %ifidn SOLARIS,1
+    %define HIDDEN_DATA(x) x:data hidden
+  %else
+  %define HIDDEN_DATA(x) x
+ %endif
 %else
   %macro GET_GOT 1
   %endmacro

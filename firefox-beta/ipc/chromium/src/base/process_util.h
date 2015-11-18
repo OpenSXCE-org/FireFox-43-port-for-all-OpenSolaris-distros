@@ -1,3 +1,7 @@
+/*
+ * Copyright 2015 OpenSXCE.org Martin Bochnig <opensxce@mail.ru>
+ * FireFox 20/30/40++ gcc4.x port with Flash support for OpenSolaris++ x86/x64
+ */
 // Copyright (c) 2009 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -17,12 +21,16 @@
 #ifndef STDOUT_FILENO
 #define STDOUT_FILENO 1
 #endif
-#elif defined(OS_LINUX) || defined(__GLIBC__)
+#elif defined(OS_LINUX) || defined(OS_SOLARIS) || defined(__GLIBC__)
 #include <dirent.h>
 #include <limits.h>
 #include <sys/types.h>
 #elif defined(OS_MACOSX)
 #include <mach/mach.h>
+#endif
+
+#if defined(OS_SOLARIS)
+#define NAME_MAX 14
 #endif
 
 #include <map>
